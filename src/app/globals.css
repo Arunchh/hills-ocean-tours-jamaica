@@ -1,0 +1,216 @@
+@import "tailwindcss";
+
+:root {
+  /* Jamaican flag */
+  --jamaica-green: #009b3a;
+  --jamaica-green-dark: #007a2e;
+  --jamaica-green-light: #e8f8ee;
+  --jamaica-gold: #fcd116;
+  --jamaica-gold-dark: #d4a800;
+  --jamaica-gold-light: #fff9e0;
+  --jamaica-black: #0a0a0a;
+  --jamaica-black-soft: #1a1a1a;
+
+  /* Rastafari accent */
+  --rasta-red: #ce1126;
+  --rasta-red-dark: #a50e1e;
+  --rasta-red-light: #fde8eb;
+
+  --jamaica-cream: #fffbf0;
+  --jamaica-cream-dark: #f5edd6;
+
+  /* Mobile layout */
+  --header-height: 4rem;
+  --mobile-cta-height: 3.75rem;
+  --page-gutter: 1rem;
+}
+
+@media (min-width: 640px) {
+  :root {
+    --header-height: 4.5rem;
+    --mobile-cta-height: 4.25rem;
+    --page-gutter: 1.5rem;
+  }
+}
+
+@theme inline {
+  --color-jamaica-green: var(--jamaica-green);
+  --color-jamaica-green-dark: var(--jamaica-green-dark);
+  --color-jamaica-green-light: var(--jamaica-green-light);
+  --color-jamaica-gold: var(--jamaica-gold);
+  --color-jamaica-gold-dark: var(--jamaica-gold-dark);
+  --color-jamaica-gold-light: var(--jamaica-gold-light);
+  --color-jamaica-black: var(--jamaica-black);
+  --color-jamaica-black-soft: var(--jamaica-black-soft);
+  --color-rasta-red: var(--rasta-red);
+  --color-rasta-red-dark: var(--rasta-red-dark);
+  --color-rasta-red-light: var(--rasta-red-light);
+  --color-jamaica-cream: var(--jamaica-cream);
+  --color-jamaica-cream-dark: var(--jamaica-cream-dark);
+  --font-sans: var(--font-outfit), system-ui, sans-serif;
+  --font-display: var(--font-fraunces), Georgia, serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-height) + 0.75rem);
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--jamaica-black-soft);
+  background: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  text-size-adjust: 100%;
+  overflow-x: hidden;
+}
+
+a,
+button {
+  touch-action: manipulation;
+}
+
+/* Prevent iOS zoom on form focus — inputs must be >= 16px */
+input,
+select,
+textarea {
+  font-size: 16px;
+}
+
+@media (min-width: 640px) {
+  input,
+  select,
+  textarea {
+    font-size: 0.875rem;
+  }
+}
+
+::selection {
+  background: var(--jamaica-gold);
+  color: var(--jamaica-black);
+}
+
+/* Section spacing — balanced for mobile readability */
+.section-py {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+@media (min-width: 640px) {
+  .section-py {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-py {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+  }
+}
+
+.section-heading-balance {
+  text-wrap: balance;
+}
+
+/* Bottom spacer for sticky mobile CTA + safe area (notch phones) */
+.mobile-page-spacer {
+  height: calc(var(--mobile-cta-height) + env(safe-area-inset-bottom, 0px) + 0.5rem);
+}
+
+.mobile-cta-bar {
+  padding-bottom: max(0.75rem, env(safe-area-inset-bottom, 0px));
+}
+
+.safe-top {
+  padding-top: env(safe-area-inset-top, 0px);
+}
+
+/* Horizontal scroll tabs — snap on mobile */
+.scroll-tabs {
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x proximity;
+}
+
+.scroll-tabs > * {
+  scroll-snap-align: start;
+}
+
+.scroll-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.mobile-nav-drawer {
+  -webkit-overflow-scrolling: touch;
+}
+
+.mobile-cta-shell {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* Jamaican flag stripe — green / gold / black */
+.jamaica-stripe {
+  height: 6px;
+  background: linear-gradient(
+    90deg,
+    var(--jamaica-green) 0%,
+    var(--jamaica-green) 33%,
+    var(--jamaica-gold) 33%,
+    var(--jamaica-gold) 66%,
+    var(--jamaica-black) 66%,
+    var(--jamaica-black) 100%
+  );
+}
+
+/* Rastafari tri-color accent */
+.rasta-stripe {
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    var(--rasta-red) 0%,
+    var(--rasta-red) 33%,
+    var(--jamaica-gold) 33%,
+    var(--jamaica-gold) 66%,
+    var(--jamaica-green) 66%,
+    var(--jamaica-green) 100%
+  );
+}
+
+.rasta-gradient-bg {
+  background: linear-gradient(
+    135deg,
+    var(--jamaica-black) 0%,
+    #1a3d1a 40%,
+    var(--jamaica-green-dark) 100%
+  );
+}
+
+.pattern-lion {
+  background-image: radial-gradient(
+    circle at 20% 50%,
+    rgba(252, 209, 22, 0.08) 0%,
+    transparent 50%
+  ),
+  radial-gradient(
+    circle at 80% 50%,
+    rgba(206, 17, 38, 0.06) 0%,
+    transparent 50%
+  );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

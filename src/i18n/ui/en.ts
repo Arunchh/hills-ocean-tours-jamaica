@@ -1,0 +1,247 @@
+import type { UiMessages } from "../types";
+
+export const uiEn: UiMessages = {
+  common: {
+    getQuote: "Get a Quote",
+    call: "Call",
+    whatsapp: "WhatsApp",
+    quote: "Quote",
+    fromPriceUsd: "From {price} USD",
+    fromPriceUsdPerPerson: "From {price} USD / person",
+    readMore: "Read more →",
+    backToHome: "Back to Home",
+    allGuides: "All Guides",
+    allTours: "All Tours",
+    openMenu: "Open menu",
+    closeMenu: "Close menu",
+    usTravelers: "travelers",
+    whatsappUs: "WhatsApp Us",
+    bookTour: "Book Tour",
+    language: "Language",
+    jtbLicense: "JTB License:",
+    allRightsReserved: "All rights reserved.",
+    followUs: "Follow Us",
+    quickLinks: "Quick Links",
+    contact: "Contact",
+    facebook: "Facebook",
+    instagram: "Instagram",
+    fanFavorite: "Popular",
+    featuredExperience: "Featured",
+    popular: "Popular",
+    viewDetails: "View Details",
+    bookThisTour: "Book This Tour",
+    bookCityTour: "Book a {city} Tour",
+    popularResorts: "Popular resorts we serve",
+    cityToursImageAlt: "{city}, Jamaica tours",
+    needTransferCtaTitle: "Ready to book?",
+    needTransferCtaDescription:
+      "Message {business} on WhatsApp — we reply fast with availability and pricing.",
+    needTransferCtaButton: "Book on WhatsApp",
+    countryName: "Jamaica",
+    pricesInUsd: "All prices in USD",
+    deposit: "Deposit",
+    perPerson: "per person",
+    nonRefundable: "Non-refundable",
+    whatToBring: "What to Bring",
+    whatsIncluded: "What's Included",
+    recommendedTime: "Recommended Time",
+    businessHours: "Business Hours",
+    responseTime: "Response Time",
+    similarTours: "Similar Experiences",
+    itinerary: "Itinerary",
+    notIncluded: "Not Included",
+    credentials: "Credentials",
+    viewLocationGuide: "View location guide",
+    allLocations: "All service areas",
+  },
+  sections: {
+    services: {
+      eyebrow: "What We Offer",
+      title: "Tours & Experiences in Montego Bay",
+      description:
+        "Water sports, adventure, day trips, and private transport — everything you need for an unforgettable Jamaica vacation.",
+    },
+    featured: {
+      eyebrow: "Featured Experiences",
+      title: "Full Pricing — No Surprises",
+      description:
+        "Our most popular experiences with complete USD rates, deposit info, and what's included.",
+    },
+    tourCatalog: {
+      eyebrow: "Browse by Category",
+      title: "All Tours & Activities",
+      description:
+        "Filter by water, adventure, or day trips. Tours without listed prices are available — request a quote.",
+    },
+    excursions: {
+      eyebrow: "Full Tour Catalog",
+      title: "Every Experience We Offer",
+      description:
+        "From clear kayak drone shoots to Dunn's River Falls — your local Montego Bay operator for it all.",
+    },
+    howItWorks: {
+      eyebrow: "Easy Booking",
+      title: "4 Steps — You're Set",
+      description:
+        "No complicated apps. WhatsApp us, pay your deposit, get picked up, and enjoy.",
+    },
+    testimonials: {
+      eyebrow: "Guest Reviews",
+      title: "What Travelers Say",
+      description:
+        "Couples, families, and groups who booked clear kayak shoots, jet cars, and day tours with us.",
+    },
+    faq: {
+      eyebrow: "FAQ",
+      title: "Common Questions",
+      description:
+        "Pricing, deposits, pickup, and what's included — answered straight.",
+    },
+    contact: {
+      eyebrow: "Book Your Experience",
+      title: "Get a Quote or Book Now",
+      description:
+        "Tell us your hotel, tour interest, and travel date. {responseTime}",
+    },
+    transportCta: {
+      title: "Not sure if pickup is included for your hotel?",
+      description:
+        "Message us with your resort name — we'll confirm transport fees upfront before you book.",
+      button: "Ask About Pickup",
+    },
+    transferQuote: {
+      eyebrow: "Airport & Cruise Transfers",
+      title: "Book Your Transfer Quote",
+      description:
+        "Pre-book airport or Falmouth cruise port transfers. Fill in your details and send the request directly to us on WhatsApp.",
+      submit: "Send Transfer Request on WhatsApp",
+      whatsappNote:
+        "We confirm pricing and pickup time on WhatsApp — usually within a few hours. One brand, one fleet, no luxury tier upsells.",
+    },
+    serviceArea: {
+      eyebrow: "Where We Operate",
+      title: "Montego Bay, Ocho Rios & North Coast",
+      description:
+        "We serve the resorts and ports where north coast visitors actually stay — Kingston is not in our service area.",
+    },
+    promoBanner: {
+      dismiss: "Dismiss promotion",
+    },
+    locations: {
+      eyebrow: "Location Guides",
+      title: "Tours by Area",
+      description: "Browse experiences and transfers for each area we serve.",
+    },
+  },
+  locations: {
+    popularTours: "Popular Tours & Transfers",
+    exploreGuide: "Explore Other Areas",
+    backToLocations: "Back to service areas",
+  },
+  tourKind: {
+    all: "All Tours",
+    single: "Single Tours",
+    combo: "Combo Tours",
+  },
+  transferForm: {
+    tripType: "Transfer Type *",
+    pickup: "Pickup Location *",
+    dropoff: "Drop-off Location *",
+    date: "Date *",
+    time: "Pickup Time",
+    passengers: "Passengers *",
+    luggage: "Luggage / Notes",
+    roundTrip: "Round trip",
+    tripTypes: [
+      { value: "airport-pickup", label: "Airport pickup (MBJ → hotel)" },
+      { value: "airport-dropoff", label: "Airport drop-off (hotel → MBJ)" },
+      { value: "cruise-port", label: "Falmouth cruise port transfer" },
+      { value: "hotel-transfer", label: "Hotel / resort transfer" },
+      { value: "other", label: "Other" },
+    ],
+    placeholders: {
+      pickup: "e.g. Sangster Airport or Secrets St. James",
+      dropoff: "e.g. Grand Palladium or Falmouth cruise port",
+      time: "14:30",
+      passengers: "4",
+      luggage: "4 large suitcases",
+    },
+    whatsappTemplate:
+      "Hi {business}, I'd like a transfer quote.\n\nType: {tripType}\nPickup: {pickup}\nDrop-off: {dropoff}\nDate: {date}\nTime: {time}\nPassengers: {passengers}\nLuggage: {luggage}\nRound trip: {roundTrip}",
+  },
+  tourTypes: {
+    transfer: "Transfer",
+    excursion: "Excursion",
+    activity: "Activity",
+    combo: "Combo Tour",
+  },
+  contact: {
+    whatsappQuote: "Hi {business}, I'd like a quote for a tour please.",
+    whatsappResort: "Hi {business}, I'm interested in booking an experience in Montego Bay.",
+    whatsappTour: "Hi {business}, I'm interested in the {tour} experience. My hotel is [HOTEL]. Date: [DATE]. Group size: [N].",
+    callDirect: "Call Direct",
+    whatsappFastest: "WhatsApp (Fastest)",
+    messageUsNow: "Message us now",
+    emailLabel: "Email",
+    form: {
+      fullName: "Full Name *",
+      email: "Email *",
+      phone: "Phone / WhatsApp",
+      resort: "Your Hotel / Airbnb *",
+      service: "Experience *",
+      travelDate: "Preferred Date",
+      guests: "Number of Guests",
+      details: "Other Details",
+      submit: "Request Quote",
+      submitting: "Sending...",
+      disclaimer: "We respond within 2 hours. No spam, no obligation.",
+      placeholders: {
+        name: "Your name",
+        email: "you@email.com",
+        phone: "+1 (555) 123-4567",
+        guests: "2",
+        details: "Tour preferences, special requests...",
+        selectResort: "Select your hotel",
+        selectService: "Select an experience",
+      },
+      resortOptions: [
+        "Montego Bay — Hip Strip / City",
+        "Secrets St. James",
+        "Holiday Inn Resort",
+        "Royalton Blue Waters",
+        "Grand Palladium Jamaica",
+        "Excellence Oyster Bay",
+        "Princess Grand Jamaica",
+        "Other Hotel / Airbnb",
+      ],
+      serviceOptions: [
+        { value: "Clear Kayak Photoshoot", label: "Clear Kayak Photoshoot" },
+        { value: "Jet Car Rental", label: "Jet Car Rental" },
+        { value: "ATV Adventure", label: "ATV Adventure" },
+        { value: "Combo Tour", label: "Combo Tour Package" },
+        { value: "Private Yacht Charter", label: "Private Yacht Charter" },
+        { value: "Airport / Cruise Transfer", label: "Airport / Cruise Transfer" },
+        { value: "Blue Hole", label: "Blue Hole (Ocho Rios)" },
+        { value: "Dunn's River Falls", label: "Dunn's River Falls" },
+        { value: "Luminous Lagoon", label: "Luminous Lagoon" },
+        { value: "Party Catamaran", label: "Party Catamaran Cruise" },
+        { value: "Horseback Riding", label: "Horseback Riding" },
+        { value: "Other", label: "Other" },
+      ],
+    },
+  },
+  blog: {
+    indexTitle: "Montego Bay Travel Guides",
+    indexSubtitle: "Tips for tours, water sports, and getting around Montego Bay.",
+    metadataTitle: "Montego Bay Travel Blog — Tours & Tips",
+    metadataDescription:
+      "Guides for Montego Bay tours — clear kayak photoshoots, jet car rentals, day trips, and nightlife tips.",
+    indexDescription:
+      "Guides for Montego Bay tours — clear kayak photoshoots, jet car rentals, day trips, and nightlife tips.",
+  },
+  form: {
+    success: "Thanks! We'll reply on WhatsApp or email within 2 hours.",
+    error: "Something went wrong. Please WhatsApp or call us directly.",
+    mailtoSuccess: "Your email app should open — send the message to complete your request.",
+  },
+};
