@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ArrowRight, MapPin, Moon, Palmtree, Plane, Sparkles, Building2, BookOpen } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { useI18n } from "@/i18n/LocaleProvider";
+import { ExploreStickerRow } from "@/components/ui/HomeTravelDecor";
 import { localizeHref } from "@/i18n/paths";
 
 const exploreIcons = [Palmtree, Plane, Building2, Moon, MapPin, BookOpen] as const;
@@ -20,6 +21,8 @@ export function HomeExplore() {
           title={homeExplore.title}
           description={homeExplore.description}
         />
+
+        <ExploreStickerRow />
 
         <div className="mt-10 grid gap-4 sm:mt-14 sm:grid-cols-2 lg:grid-cols-3">
           {homeExplore.links.map((link, i) => {

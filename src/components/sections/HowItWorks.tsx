@@ -1,6 +1,7 @@
 "use client";
 
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { SectionTravelDecor } from "@/components/ui/HomeTravelDecor";
 import { useI18n } from "@/i18n/LocaleProvider";
 
 const stepColors = [
@@ -14,8 +15,9 @@ export function HowItWorks() {
   const { siteConfig, ui } = useI18n();
 
   return (
-    <section id="how-it-works" className="section-py bg-jamaica-cream-dark">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section id="how-it-works" className="section-py relative overflow-hidden bg-jamaica-cream-dark">
+      <SectionTravelDecor variant="left" />
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow={ui.sections.howItWorks.eyebrow}
           title={ui.sections.howItWorks.title}

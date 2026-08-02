@@ -213,4 +213,91 @@ textarea {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+
+  .travel-sticker-float {
+    animation: none !important;
+  }
+}
+
+/* Vintage luggage-sticker travel decor */
+.travel-sticker {
+  filter: drop-shadow(0 8px 16px rgba(10, 10, 10, 0.18));
+}
+
+.travel-sticker__body {
+  overflow: hidden;
+  border: 3px solid #fff;
+  border-radius: 0.75rem;
+  background: #fff;
+  box-shadow:
+    0 0 0 1px rgba(10, 10, 10, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.travel-sticker__header {
+  padding: 0.2rem 0.45rem;
+  text-align: center;
+}
+
+.travel-sticker__label {
+  font-family: var(--font-sans);
+  font-size: 0.5rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.travel-sticker__art {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.35rem 0.5rem 0.45rem;
+  background: linear-gradient(180deg, #fffbf0 0%, #fff 100%);
+}
+
+.travel-sticker--sm {
+  width: 4.25rem;
+}
+
+.travel-sticker--sm .travel-sticker__art {
+  height: 3rem;
+}
+
+.travel-sticker--md {
+  width: 5.5rem;
+}
+
+.travel-sticker--md .travel-sticker__art {
+  height: 3.75rem;
+}
+
+.travel-sticker--lg {
+  width: 7rem;
+}
+
+.travel-sticker--lg .travel-sticker__art {
+  height: 4.75rem;
+}
+
+@keyframes travel-sticker-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.travel-sticker-float {
+  animation: travel-sticker-float 5s ease-in-out infinite;
+}
+
+.travel-sticker-float--delay {
+  animation-delay: 1.2s;
+}
+
+.travel-sticker-float--slow {
+  animation-duration: 7s;
 }

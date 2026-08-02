@@ -7,6 +7,7 @@ import { JamaicaStripe } from "@/components/ui/JamaicaStripe";
 import { useI18n } from "@/i18n/LocaleProvider";
 import { formatUi } from "@/i18n/index";
 import { localizeHref } from "@/i18n/paths";
+import { HeroTravelDecor } from "@/components/ui/HomeTravelDecor";
 import { formatPhoneLink, formatWhatsAppLink } from "@/lib/utils";
 
 export function Hero() {
@@ -27,6 +28,7 @@ export function Hero() {
       />
       <div className="absolute inset-0 rasta-gradient-bg opacity-90" />
       <div className="absolute inset-0 pattern-lion" />
+      <HeroTravelDecor />
 
       <div className="relative mx-auto flex min-h-[100dvh] max-w-7xl flex-col justify-end px-4 pb-[calc(var(--mobile-cta-height)+2rem)] pt-[calc(var(--header-height)+1rem)] sm:min-h-screen sm:justify-center sm:px-6 sm:pb-32 sm:pt-32 lg:px-8">
         <div className="max-w-3xl">
