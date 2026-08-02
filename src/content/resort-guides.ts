@@ -1,3 +1,4 @@
+import { locationImages } from "@/config/location-images";
 import type { ResortGuide } from "@/i18n/types";
 
 export const resortGuides: ResortGuide[] = [
@@ -7,8 +8,7 @@ export const resortGuides: ResortGuide[] = [
     tagline: "Luxury resorts, historic tours & Ocho Rios day trips",
     description:
       "The Rose Hall corridor stretches from Ironshore to beyond Falmouth — home to Hyatt Zilara, Hyatt Ziva, Hilton Rose Hall, Iberostar Grand, Secrets, and Jewel Grande. We're here daily for clear kayak shoots at One Man Beach, Rose Hall Great House tours, and full-day Ocho Rios waterfall trips. Transport fees apply for this zone and are always quoted before you book.",
-    image:
-      "https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?auto=format&fit=crop&w=1200&q=80",
+    image: locationImages.landmarks.roseHallCorridor,
     pickupPolicy:
       "Roundtrip pickup from Rose Hall corridor resorts is available on all tours. A transportation fee applies based on your property — we confirm the exact amount on WhatsApp before you pay your 50% deposit.",
     transportNote:
@@ -78,8 +78,7 @@ export const resortGuides: ResortGuide[] = [
     tagline: "Free pickup on select tours — closest to the action",
     description:
       "Central Montego Bay and the Hip Strip put you minutes from One Man Beach, Pier One jet cars, Margaritaville, and Sangster Airport. If you're at RIU Montego Bay, Sandals MoBay, Holiday Inn, or Breathless — many of our tours include free roundtrip transportation.",
-    image:
-      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=80",
+    image: locationImages.landmarks.montegoBayBeach,
     pickupPolicy:
       "Select tours — especially Clear Kayak Photoshoot — include free roundtrip pickup when your hotel is in Montego Bay city limits. We'll confirm eligibility when you message us on WhatsApp.",
     transportNote:
@@ -146,8 +145,7 @@ export const resortGuides: ResortGuide[] = [
     tagline: "Grand Palladium, Royalton, Excellence & beyond",
     description:
       "Resorts east of central MoBay — Grand Palladium Lady Hamilton, Royalton Blue Waters, Excellence Oyster Bay, Ocean Eden Bay, and Princess properties — are outside the free pickup zone. We serve these guests daily with upfront transport fees and reliable timing for Ocho Rios day trips and MoBay water sports.",
-    image:
-      "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1200&q=80",
+    image: locationImages.landmarks.grandPalladiumArea,
     pickupPolicy:
       "Out-of-area resorts always incur a transportation fee. We quote the exact amount on WhatsApp before you pay your deposit — no surprises on pickup day.",
     transportNote:
@@ -219,8 +217,7 @@ export const resortGuides: ResortGuide[] = [
     tagline: "Waterfalls, Blue Hole & adventure at your doorstep",
     description:
       "Staying in Ocho Rios puts you closest to Dunn's River Falls, Blue Hole, Konoko Falls, and dolphin encounters. We pick up locally for waterfall tours and connect Montego Bay guests for north coast combo packages — one driver, one quote, no switching operators.",
-    image:
-      "https://images.unsplash.com/photo-1544551763-77ef2d0cfcb0?auto=format&fit=crop&w=1200&q=80",
+    image: locationImages.cities.ochoRios,
     pickupPolicy:
       "Local Ocho Rios pickup for waterfall and adventure tours. Montego Bay guests traveling to Ochi for day trips include transport in the package quote.",
     transportNote:

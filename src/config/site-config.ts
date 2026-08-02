@@ -1,3 +1,5 @@
+import { excursionLandmarkImages, locationImages } from "@/config/location-images";
+
 const bambooRaftingImages = [
   "/images/tours/bamboo-rafting/01-hero.jpeg",
   "/images/tours/bamboo-rafting/02-rafting.jpeg",
@@ -58,9 +60,8 @@ export const siteConfig = {
       "Single tours, combo packages, drone photoshoots, nightlife packages, and private yacht charters across Montego Bay and Ocho Rios. Airport and cruise port transfers available. Message us on WhatsApp to check availability.",
     primaryCta: "Browse Tours",
     secondaryCta: "Airport & Cruise Transfer",
-    image:
-      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1920&q=80",
-    imageAlt: "Turquoise Caribbean water in Montego Bay, Jamaica",
+    image: locationImages.heroMontegoBay,
+    imageAlt: "Doctor's Cave Beach, Montego Bay Hip Strip, Jamaica",
     badges: ["Local MoBay Operator", "Drone Photo & Video", "Hotel Pickup", "WhatsApp Booking"],
   },
 
@@ -273,7 +274,7 @@ export const siteConfig = {
       priceType: "from" as const,
       highlights: ["2-seat or 4-seat", "Edited drone video", "Per car pricing"],
       image:
-        "https://images.unsplash.com/photo-1559827260-dc66d52bef19?auto=format&fit=crop&w=800&q=80",
+      excursionLandmarkImages["jet-car-rental"],
       popular: true,
       hasDetailPage: true,
     },
@@ -288,7 +289,7 @@ export const siteConfig = {
       priceType: "quote" as const,
       highlights: ["Off-road trails", "Countryside views", "Hotel pickup"],
       image:
-        "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80",
+      excursionLandmarkImages["atv"],
       popular: false,
       hasDetailPage: false,
     },
@@ -303,7 +304,7 @@ export const siteConfig = {
       priceType: "quote" as const,
       highlights: ["Local farm visit", "Cultural experience", "Guided tour"],
       image:
-        "https://images.unsplash.com/photo-1536697246787-1f7ae1d80506?auto=format&fit=crop&w=800&q=80",
+      excursionLandmarkImages["weed-farm"],
       popular: false,
       hasDetailPage: false,
     },
@@ -318,7 +319,7 @@ export const siteConfig = {
       priceType: "quote" as const,
       highlights: ["Open water ride", "Beach launch", "Couples welcome"],
       image:
-        "https://images.unsplash.com/photo-1559827260-dc66d52bef19?auto=format&fit=crop&w=800&q=80",
+      excursionLandmarkImages["jet-ski"],
       popular: false,
       hasDetailPage: false,
     },
@@ -333,7 +334,7 @@ export const siteConfig = {
       priceType: "quote" as const,
       highlights: ["Beach ride", "Scenic trails", "All skill levels"],
       image:
-        "https://images.unsplash.com/photo-1553284965-83fd3e82fa5f?auto=format&fit=crop&w=800&q=80",
+      excursionLandmarkImages["horseback-beach"],
       popular: false,
       hasDetailPage: false,
     },
@@ -348,7 +349,7 @@ export const siteConfig = {
       priceType: "quote" as const,
       highlights: ["Guided ride", "Countryside & trails", "Photo stops"],
       image:
-        "https://images.unsplash.com/photo-1598971639052-f7a192784a88?auto=format&fit=crop&w=800&q=80",
+      excursionLandmarkImages["horseback-riding"],
       popular: false,
       hasDetailPage: false,
     },
@@ -378,7 +379,7 @@ export const siteConfig = {
       priceType: "quote" as const,
       highlights: ["Swimming", "Cliff jumping", "Transport from MoBay"],
       image:
-        "https://images.unsplash.com/photo-1500375592092-40eb6668c21a?auto=format&fit=crop&w=800&q=80",
+      excursionLandmarkImages["blue-hole"],
       popular: true,
       hasDetailPage: true,
     },
@@ -393,7 +394,7 @@ export const siteConfig = {
       priceType: "quote" as const,
       highlights: ["Guided climb", "Iconic waterfall", "Transport from MoBay"],
       image:
-        "https://images.unsplash.com/photo-1544551763-77ef2d0cfcb0?auto=format&fit=crop&w=800&q=80",
+      excursionLandmarkImages["dunns-river-falls"],
       popular: true,
       hasDetailPage: true,
     },
@@ -408,7 +409,7 @@ export const siteConfig = {
       priceType: "quote" as const,
       highlights: ["Glowing water", "Night boat ride", "Unique experience"],
       image:
-        "https://images.unsplash.com/photo-1519046904212-407b7196a9d8?auto=format&fit=crop&w=800&q=80",
+      excursionLandmarkImages["luminous-lagoon"],
       popular: false,
       hasDetailPage: true,
     },
@@ -423,7 +424,7 @@ export const siteConfig = {
       priceType: "quote" as const,
       highlights: ["Open bar", "Snorkeling", "Music & dancing"],
       image:
-        "https://images.unsplash.com/photo-1567894340315-735d7c361db0?auto=format&fit=crop&w=800&q=80",
+      excursionLandmarkImages["party-catamaran"],
       popular: false,
       hasDetailPage: false,
     },
@@ -438,7 +439,7 @@ export const siteConfig = {
       priceType: "quote" as const,
       highlights: ["Aerial views", "Beach launch", "Photo-worthy"],
       image:
-        "https://images.unsplash.com/photo-1505118389757-91dd49627c00?auto=format&fit=crop&w=800&q=80",
+      excursionLandmarkImages["parasailing"],
       popular: false,
       hasDetailPage: false,
     },
@@ -453,7 +454,7 @@ export const siteConfig = {
       priceType: "quote" as const,
       highlights: ["Speed & splash", "Group fun", "Ocean ride"],
       image:
-        "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80",
+      excursionLandmarkImages["sea-tubing"],
       popular: false,
       hasDetailPage: false,
     },
@@ -468,7 +469,7 @@ export const siteConfig = {
       priceType: "quote" as const,
       highlights: ["Hand-feed hummingbirds", "Nature walk", "Family friendly"],
       image:
-        "https://images.unsplash.com/photo-1444464666168-49d633b86797?auto=format&fit=crop&w=800&q=80",
+      excursionLandmarkImages["rockland-bird-sanctuary"],
       popular: false,
       hasDetailPage: false,
     },
@@ -498,7 +499,7 @@ export const siteConfig = {
       priceType: "quote" as const,
       highlights: ["Three activities", "Transport from MoBay", "Full north coast day"],
       image:
-        "https://images.unsplash.com/photo-1544551763-77ef2d0cfcb0?auto=format&fit=crop&w=800&q=80",
+      excursionLandmarkImages["atv-zipline-dunns-river-combo"],
       popular: true,
       hasDetailPage: false,
     },
@@ -513,7 +514,7 @@ export const siteConfig = {
       priceType: "quote" as const,
       highlights: ["Four-in-one package", "Guided all day", "Transport included"],
       image:
-        "https://images.unsplash.com/photo-1553284965-83fd3e82fa5f?auto=format&fit=crop&w=800&q=80",
+      excursionLandmarkImages["atv-horseback-zipline-dunns-combo"],
       popular: false,
       hasDetailPage: false,
     },
@@ -528,7 +529,7 @@ export const siteConfig = {
       priceType: "quote" as const,
       highlights: ["Dolphin swim", "Waterfall climb", "Family favorite"],
       image:
-        "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80",
+      excursionLandmarkImages["dolphin-dunns-river-combo"],
       popular: false,
       hasDetailPage: false,
     },
@@ -543,7 +544,7 @@ export const siteConfig = {
       priceType: "quote" as const,
       highlights: ["Private vessel", "Custom route", "Couples & groups"],
       image:
-        "https://images.unsplash.com/photo-1567894340315-735d7c361db0?auto=format&fit=crop&w=800&q=80",
+      excursionLandmarkImages["private-yacht-charter"],
       popular: true,
       hasDetailPage: true,
     },
@@ -558,7 +559,7 @@ export const siteConfig = {
       priceType: "quote" as const,
       highlights: ["Snorkeling stops", "Sunset option", "Group celebrations"],
       image:
-        "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80",
+      excursionLandmarkImages["private-catamaran-charter"],
       popular: false,
       hasDetailPage: false,
     },
@@ -573,7 +574,7 @@ export const siteConfig = {
       priceType: "quote" as const,
       highlights: ["Dolphin encounter", "Family friendly", "Transport from MoBay"],
       image:
-        "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80",
+      excursionLandmarkImages["swimming-with-dolphins"],
       popular: false,
       hasDetailPage: false,
     },
@@ -588,7 +589,7 @@ export const siteConfig = {
       priceType: "quote" as const,
       highlights: ["Canopy lines", "Rainforest views", "All skill levels"],
       image:
-        "https://images.unsplash.com/photo-1519046904212-407b7196a9d8?auto=format&fit=crop&w=800&q=80",
+      excursionLandmarkImages["ziplining"],
       popular: false,
       hasDetailPage: false,
     },
@@ -603,7 +604,7 @@ export const siteConfig = {
       priceType: "quote" as const,
       highlights: ["Botanical gardens", "Waterfall pools", "Less crowded than Dunn's River"],
       image:
-        "https://images.unsplash.com/photo-1500375592092-40eb6668c21a?auto=format&fit=crop&w=800&q=80",
+      excursionLandmarkImages["konoko-falls"],
       popular: false,
       hasDetailPage: true,
     },
@@ -618,7 +619,7 @@ export const siteConfig = {
       priceType: "quote" as const,
       highlights: ["Seven-tier waterfall", "Natural pools", "Scenic south coast drive"],
       image:
-        "https://images.unsplash.com/photo-1544551763-77ef2d0cfcb0?auto=format&fit=crop&w=800&q=80",
+      excursionLandmarkImages["ys-falls"],
       popular: false,
       hasDetailPage: false,
     },
@@ -633,7 +634,7 @@ export const siteConfig = {
       priceType: "quote" as const,
       highlights: ["Cliff diving show", "Legendary sunset", "7 Mile Beach stop"],
       image:
-        "https://images.unsplash.com/photo-1505118389757-91dd49627c00?auto=format&fit=crop&w=800&q=80",
+      excursionLandmarkImages["ricks-cafe"],
       popular: true,
       hasDetailPage: true,
     },
@@ -648,7 +649,7 @@ export const siteConfig = {
       priceType: "quote" as const,
       highlights: ["White sand beach", "Swimming & lunch", "Transport from MoBay"],
       image:
-        "https://images.unsplash.com/photo-1519046904212-407b7196a9d8?auto=format&fit=crop&w=800&q=80",
+      excursionLandmarkImages["seven-mile-beach"],
       popular: false,
       hasDetailPage: false,
     },
@@ -663,7 +664,7 @@ export const siteConfig = {
       priceType: "quote" as const,
       highlights: ["Boat ride to bar on stilts", "Cold drinks in the sea", "Iconic Jamaica photo op"],
       image:
-        "https://images.unsplash.com/photo-1567894340315-735d7c361db0?auto=format&fit=crop&w=800&q=80",
+      excursionLandmarkImages["floyds-pelican-bar"],
       popular: true,
       hasDetailPage: false,
     },
@@ -678,7 +679,7 @@ export const siteConfig = {
       priceType: "quote" as const,
       highlights: ["Private boat charter", "Fresh lobster lunch", "Snorkeling stop"],
       image:
-        "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80",
+      excursionLandmarkImages["booby-cay-lobster-lunch"],
       popular: false,
       hasDetailPage: false,
     },
@@ -693,7 +694,7 @@ export const siteConfig = {
       priceType: "quote" as const,
       highlights: ["Birthplace & mausoleum", "Reggae history", "Guided cultural tour"],
       image:
-        "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80",
+      excursionLandmarkImages["nine-mile-bob-marley"],
       popular: true,
       hasDetailPage: true,
     },
@@ -708,7 +709,7 @@ export const siteConfig = {
       priceType: "quote" as const,
       highlights: ["Historic plantation tour", "Rose Hall corridor pickup", "Evening tour option"],
       image:
-        "https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?auto=format&fit=crop&w=800&q=80",
+      excursionLandmarkImages["rose-hall-great-house"],
       popular: true,
       hasDetailPage: true,
     },
@@ -723,7 +724,7 @@ export const siteConfig = {
       priceType: "quote" as const,
       highlights: ["Private beach setup", "Candlelight dining", "Couples & anniversaries"],
       image:
-        "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=800&q=80",
+      excursionLandmarkImages["romantic-beach-dinner"],
       popular: true,
       hasDetailPage: true,
     },
@@ -757,7 +758,7 @@ export const siteConfig = {
           "Round-trip transport from your hotel to Margaritaville and Pier One — dinner, drinks, and waterfront vibes on the Hip Strip.",
         includes: ["Hotel pickup & return", "Margaritaville stop", "Pier One waterfront"],
         image:
-          "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=800&q=80",
+          locationImages.landmarks.montegoBayBeach,
         badge: "Most Popular",
       },
       {
@@ -766,7 +767,7 @@ export const siteConfig = {
           "Upscale lounge experience in Montego Bay — we handle transport there and back so you can enjoy the night worry-free.",
         includes: ["Private round-trip transport", "Lounge 2727 drop-off", "Flexible return time"],
         image:
-          "https://images.unsplash.com/photo-1566737238500-e93595362873?auto=format&fit=crop&w=800&q=80",
+          locationImages.cities.montegoBay,
         badge: "Upscale",
       },
       {
@@ -775,7 +776,7 @@ export const siteConfig = {
           "Visiting Breathless, RIU, or Grand Palladium? We connect your resort's nightlife with off-property venues in one seamless evening.",
         includes: ["Resort pickup", "Multi-venue routing", "Timed return"],
         image:
-          "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=800&q=80",
+          locationImages.landmarks.montegoBayBeach,
         badge: "Resort Guests",
       },
     ],
@@ -786,7 +787,7 @@ export const siteConfig = {
         description:
           "Montego Bay's go-to for upscale lounge vibes — live DJs, bottle service, and a dressed-up crowd.",
         image:
-          "https://images.unsplash.com/photo-1566737238500-e93595362873?auto=format&fit=crop&w=600&q=80",
+          locationImages.cities.montegoBay,
         vibe: "Upscale · Live DJs",
         highlight: "Best for couples & groups who want a polished night out",
       },
@@ -796,7 +797,7 @@ export const siteConfig = {
         description:
           "Iconic Hip Strip beach bar — food, frozen drinks, water trampolines, and nightly entertainment steps from the sand.",
         image:
-          "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=600&q=80",
+          locationImages.landmarks.montegoBayBeach,
         vibe: "Casual · Beachfront",
         highlight: "Perfect first night in Jamaica — fun without planning",
       },
@@ -806,7 +807,7 @@ export const siteConfig = {
         description:
           "Waterfront dining and nightlife on the harbour — also home to our jet car experience by day.",
         image:
-          "https://images.unsplash.com/photo-1559827260-dc66d52bef19?auto=format&fit=crop&w=600&q=80",
+          locationImages.landmarks.montegoBayBeach,
         vibe: "Waterfront · Dining + Nightlife",
         highlight: "Combine a jet car session with an evening harbour dinner",
       },
@@ -816,7 +817,7 @@ export const siteConfig = {
         description:
           "Montego Bay nightclub for late-night dancing — ask your driver for current hours and cover.",
         image:
-          "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=600&q=80",
+          locationImages.landmarks.montegoBayBeach,
         vibe: "Late Night · 18+",
         highlight: "Adults-only — ideal cap to a big night out",
       },
@@ -854,7 +855,7 @@ export const siteConfig = {
         description:
           "The Rose Hall strip is Jamaica's resort densest zone. We pick up daily for clear kayak shoots, Ocho Rios day trips, and Rose Hall Great House tours.",
         image:
-          "https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?auto=format&fit=crop&w=800&q=80",
+          locationImages.landmarks.roseHallCorridor,
         pickupNote: "Transport fee may apply — quoted before you book",
         resortCount: 12,
         featuredResorts: ["Hyatt Zilara Rose Hall", "Hyatt Ziva Rose Hall", "Hilton Rose Hall", "Secrets St. James"],
@@ -867,7 +868,7 @@ export const siteConfig = {
         description:
           "Closest to One Man Beach, Pier One jet cars, and Hip Strip nightlife. Many tours include free roundtrip pickup from central MoBay hotels.",
         image:
-          "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80",
+          locationImages.landmarks.montegoBayBeach,
         pickupNote: "Free pickup on select tours for Hip Strip & central MoBay",
         resortCount: 10,
         featuredResorts: ["RIU Montego Bay", "Sandals Montego Bay", "Holiday Inn Resort", "Breathless Montego Bay"],
@@ -880,7 +881,7 @@ export const siteConfig = {
         description:
           "Properties east and west of central MoBay — Grand Palladium, Royalton Blue Waters, Excellence Oyster Bay, and Ocean Eden Bay. Transport fee always quoted upfront.",
         image:
-          "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=800&q=80",
+          locationImages.landmarks.grandPalladiumArea,
         pickupNote: "Out-of-area transport fee applies — confirmed on WhatsApp",
         resortCount: 14,
         featuredResorts: ["Grand Palladium Jamaica", "Royalton Blue Waters", "Excellence Oyster Bay", "Ocean Eden Bay"],
@@ -893,7 +894,7 @@ export const siteConfig = {
         description:
           "Staying in Ocho Rios? We run waterfall and adventure day trips locally, and connect MoBay guests for north coast combos.",
         image:
-          "https://images.unsplash.com/photo-1544551763-77ef2d0cfcb0?auto=format&fit=crop&w=800&q=80",
+          locationImages.cities.ochoRios,
         pickupNote: "Local Ochi pickup for waterfall tours; MoBay transport for day trips",
         resortCount: 8,
         featuredResorts: ["Sandals Ochi", "Moon Palace Jamaica", "Couples Tower Isle", "RIU Ocho Rios"],
@@ -1054,8 +1055,8 @@ export const siteConfig = {
     web3formsAccessKey: "",
     formspreeFormId: "",
     leadNotificationEmail: "hillsoceantoursja@gmail.com",
-    tawkPropertyId: "",
-    tawkWidgetId: "",
+    tawkPropertyId: process.env.NEXT_PUBLIC_TAWK_PROPERTY_ID ?? "",
+    tawkWidgetId: process.env.NEXT_PUBLIC_TAWK_WIDGET_ID ?? "",
   },
 
   social: {

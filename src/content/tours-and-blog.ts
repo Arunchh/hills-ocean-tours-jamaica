@@ -1,3 +1,5 @@
+import { locationImages } from "@/config/location-images";
+
 export type CityTour = {
   name: string;
   type: "transfer" | "excursion" | "activity" | "combo";
@@ -26,8 +28,7 @@ export const cityTourGuides: CityTourGuide[] = [
     tagline: "Your home base for north coast adventures",
     description:
       "Montego Bay is where we pick up most guests — from Hip Strip hotels and Sangster Airport (MBJ) to out-of-area resorts. Water sports at One Man Beach and Pier One, plus departures for Ocho Rios day trips and Falmouth cruise connections.",
-    image:
-      "https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?auto=format&fit=crop&w=1200&q=80",
+    image: locationImages.cities.montegoBay,
     mapEmbedUrl:
       "https://www.openstreetmap.org/export/embed.html?bbox=-77.98%2C18.42%2C-77.85%2C18.52&layer=mapnik&marker=18.4712%2C-77.9188",
     popularResorts: [
@@ -105,8 +106,7 @@ export const cityTourGuides: CityTourGuide[] = [
     tagline: "Cruise ship excursions & port transfers",
     description:
       "Falmouth is the main cruise port for western Jamaica. We meet passengers at the terminal for timed excursions and round-trip transfers — with return planned before your ship's all-aboard.",
-    image:
-      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=80",
+    image: locationImages.cities.falmouthCruisePort,
     mapEmbedUrl:
       "https://www.openstreetmap.org/export/embed.html?bbox=-77.68%2C18.48%2C-77.62%2C18.52&layer=mapnik&marker=18.5036%2C-77.6434",
     popularResorts: ["Falmouth Cruise Port terminal"],
@@ -147,8 +147,7 @@ export const cityTourGuides: CityTourGuide[] = [
     tagline: "Waterfalls, Blue Hole & combo day trips",
     description:
       "Ocho Rios is the north coast adventure hub — Dunn's River Falls, Blue Hole, and multi-activity combo packages. We transport guests from Montego Bay resorts for full-day trips with one driver and one quote.",
-    image:
-      "https://images.unsplash.com/photo-1544551763-77ef2d0cfcb0?auto=format&fit=crop&w=1200&q=80",
+    image: locationImages.cities.ochoRios,
     mapEmbedUrl:
       "https://www.openstreetmap.org/export/embed.html?bbox=-77.12%2C18.38%2C-77.02%2C18.44&layer=mapnik&marker=18.4074%2C-77.1031",
     popularResorts: ["Sandals Ochi", "Moon Palace Jamaica", "Couples Tower Isle", "RIU Ocho Rios", "Jewel Dunn's River"],
