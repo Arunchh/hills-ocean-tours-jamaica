@@ -280,4 +280,86 @@ export const uiFr: UiMessages = {
     error: "Une erreur s'est produite. Contactez-nous directement sur WhatsApp ou par téléphone.",
     mailtoSuccess: "Votre application e-mail devrait s'ouvrir — envoyez le message pour finaliser votre demande.",
   },
+  pages: {
+    tours: {
+      eyebrow: "Catalogue complet",
+      title: "Toutes les excursions et activités à Montego Bay",
+      description:
+        "Sports nautiques, aventure, excursions d'une journée, culture, forfaits combinés et yachts privés. Filtrez par catégorie ou demandez un devis sur WhatsApp.",
+    },
+    transfers: {
+      eyebrow: "Aéroport et croisière",
+      title: "Transferts Montego Bay et Falmouth",
+      description:
+        "Prise en charge à l'aéroport Sangster (MBJ), port de croisière de Falmouth et transferts entre resorts. Devis confirmé sur WhatsApp avant l'acompte.",
+    },
+    nightlife: {
+      eyebrow: "Vie nocturne",
+      title: "Forfaits nightlife à Montego Bay",
+      description:
+        "Transport aller-retour vers Lounge 2727, Margaritaville, Pier One et plus. Nous planifions votre soirée.",
+    },
+    resorts: {
+      eyebrow: "Prise en charge resort",
+      title: "Excursions depuis votre zone resort",
+      description:
+        "Rose Hall, Hip Strip, all-inclusives hors zone et resorts d'Ocho Rios — politiques de prise en charge et excursions recommandées.",
+    },
+    contact: {
+      eyebrow: "Contact",
+      title: "Réservez ou demandez un devis",
+      description:
+        "Indiquez-nous votre hôtel, date et taille du groupe. Réponse sur WhatsApp sous 2 heures en heures ouvrables.",
+    },
+    locations: {
+      eyebrow: "Zones desservies",
+      title: "Excursions par région",
+      description:
+        "Montego Bay, port de croisière de Falmouth et Ocho Rios — transferts et excursions par zone.",
+    },
+  },
+  homeExplore: {
+    eyebrow: "Explorer",
+    title: "Tout ce que nous proposons — par thème",
+    description:
+      "Chaque section a sa propre page pour faciliter la navigation et le partage. Réservation WhatsApp sur chaque expérience.",
+    links: [
+      {
+        href: "/tours",
+        title: "Excursions et activités",
+        description: "Catalogue complet — kayak transparent, cascades, ATV, combos, yachts et plus.",
+        cta: "Voir toutes les excursions",
+      },
+      {
+        href: "/transfers",
+        title: "Transferts aéroport et croisière",
+        description: "Prise en charge MBJ, port de Falmouth et transferts entre resorts.",
+        cta: "Réserver un transfert",
+      },
+      {
+        href: "/resorts",
+        title: "Zones de prise en charge",
+        description: "Hyatt Rose Hall, RIU, Grand Palladium, Sandals Ochi — excursions depuis votre hôtel.",
+        cta: "Trouver votre zone",
+      },
+      {
+        href: "/nightlife",
+        title: "Forfaits nightlife",
+        description: "Soirées Hip Strip avec transport aller-retour depuis votre hôtel.",
+        cta: "Planifier votre soirée",
+      },
+      {
+        href: "/locations",
+        title: "Guides par zone",
+        description: "MoBay, Falmouth et Ocho Rios — excursions et transferts par région.",
+        cta: "Voir les zones",
+      },
+      {
+        href: "/blog",
+        title: "Guides et conseils voyage",
+        description: "Articles SEO sur transferts aéroport, croisières, resorts et forfaits combinés.",
+        cta: "Lire le blog",
+      },
+    ],
+  },
 };

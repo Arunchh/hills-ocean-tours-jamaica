@@ -1,50 +1,26 @@
-import { Header } from "@/components/layout/Header";
-import { Footer } from "@/components/layout/Footer";
-import { MobileCTA } from "@/components/layout/MobileCTA";
-import { PromoBanner } from "@/components/layout/PromoBanner";
+import { SiteChrome } from "@/components/layout/SiteChrome";
 import { Hero } from "@/components/sections/Hero";
 import { TrustBar } from "@/components/sections/TrustBar";
-import { HowItWorks } from "@/components/sections/HowItWorks";
 import { FeaturedTours } from "@/components/sections/FeaturedTours";
-import { TourCatalog } from "@/components/sections/TourCatalog";
-import { TransferQuote } from "@/components/sections/TransferQuote";
+import { HomeExplore } from "@/components/sections/HomeExplore";
+import { HowItWorks } from "@/components/sections/HowItWorks";
 import { ValueProps } from "@/components/sections/ValueProps";
 import { Services } from "@/components/sections/Services";
-import { TransportPolicy } from "@/components/sections/TransportPolicy";
-import { ServiceAreaMap } from "@/components/sections/ServiceAreaMap";
-import { DroneShowcase } from "@/components/sections/DroneShowcase";
-import { ResortPickup } from "@/components/sections/ResortPickup";
-import { Nightlife } from "@/components/sections/Nightlife";
 import { Testimonials } from "@/components/sections/Testimonials";
-import { FAQ } from "@/components/sections/FAQ";
-import { ContactSection } from "@/components/sections/ContactSection";
 
 export default function Home() {
   return (
-    <>
-      <PromoBanner />
-      <Header />
+    <SiteChrome>
       <main>
         <Hero />
         <TrustBar />
         <FeaturedTours />
-        <DroneShowcase />
-        <TourCatalog />
-        <TransferQuote />
-        <ResortPickup />
+        <HomeExplore />
         <HowItWorks />
         <ValueProps />
         <Services />
-        <TransportPolicy />
-        <ServiceAreaMap />
-        <Nightlife />
         <Testimonials />
-        <FAQ />
-        <ContactSection />
       </main>
-      <Footer />
-      <MobileCTA />
-      <div className="mobile-page-spacer md:hidden" aria-hidden="true" />
-    </>
+    </SiteChrome>
   );
 }

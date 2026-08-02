@@ -4,7 +4,7 @@
 **Collected:** August 2, 2026  
 **Last updated:** August 2, 2026  
 **Purpose:** Landing-page copy, SEO targeting, tour catalog gaps, and social proof direction.  
-**Implementation status:** See [CLIENT-BRIEF-AND-CHANGES.md §15](./CLIENT-BRIEF-AND-CHANGES.md#15-august-2-2026--contact-instagram--marketing-expansion) for what was built.
+**Implementation status:** Multi-page SEO split complete — see [CLIENT-BRIEF-AND-CHANGES.md §16](./CLIENT-BRIEF-AND-CHANGES.md#16-august-2-2026--multi-page-seo-split).
 
 ---
 

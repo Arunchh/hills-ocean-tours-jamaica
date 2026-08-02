@@ -88,7 +88,7 @@ export function Header() {
             <Phone className="h-4 w-4" />
             {siteConfig.business.phoneDisplay}
           </a>
-          <Button href={localizeHref("/#tours", locale)} variant={scrolled ? "primary" : "gold"}>
+          <Button href={localizeHref("/tours", locale)} variant={scrolled ? "primary" : "gold"}>
             {ui.common.bookTour}
           </Button>
         </div>
@@ -152,7 +152,7 @@ export function Header() {
               {siteConfig.business.phoneDisplay}
             </a>
             <Button
-              href={localizeHref("/#tours", locale)}
+              href={localizeHref("/tours", locale)}
               variant="primary"
               className="w-full"
               onClick={() => setOpen(false)}

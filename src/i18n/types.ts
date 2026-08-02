@@ -423,6 +423,20 @@ export type UiMessages = {
     error: string;
     mailtoSuccess: string;
   };
+  pages: {
+    tours: { title: string; description: string; eyebrow: string };
+    transfers: { title: string; description: string; eyebrow: string };
+    nightlife: { title: string; description: string; eyebrow: string };
+    resorts: { title: string; description: string; eyebrow: string };
+    contact: { title: string; description: string; eyebrow: string };
+    locations: { title: string; description: string; eyebrow: string };
+  };
+  homeExplore: {
+    eyebrow: string;
+    title: string;
+    description: string;
+    links: { href: string; title: string; description: string; cta: string }[];
+  };
 };
 
 export type ResortGuide = {

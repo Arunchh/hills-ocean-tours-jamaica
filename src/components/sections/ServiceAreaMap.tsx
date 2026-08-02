@@ -57,7 +57,7 @@ export function ServiceAreaMap() {
         </div>
 
         <div className="mt-10 text-center">
-          <Button href={localizeHref("/#resorts", locale)} variant="secondary">
+          <Button href={localizeHref("/resorts", locale)} variant="secondary">
             {ui.common.allResortZones}
           </Button>
         </div>

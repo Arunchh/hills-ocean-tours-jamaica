@@ -91,7 +91,7 @@ export const siteConfig = {
     enabled: false,
     message: "Welcome back to Jamaica — ask about current seasonal offers when you message us.",
     ctaText: "Browse Tours",
-    ctaHref: "/#tours",
+    ctaHref: "/tours",
     terms: "Ask on WhatsApp for valid dates and eligible tours. Cannot be combined with other offers unless stated.",
   },
 
@@ -373,7 +373,7 @@ export const siteConfig = {
       image:
         "https://images.unsplash.com/photo-1500375592092-40eb6668c21a?auto=format&fit=crop&w=800&q=80",
       popular: true,
-      hasDetailPage: false,
+      hasDetailPage: true,
     },
     {
       slug: "dunns-river-falls",
@@ -388,7 +388,7 @@ export const siteConfig = {
       image:
         "https://images.unsplash.com/photo-1544551763-77ef2d0cfcb0?auto=format&fit=crop&w=800&q=80",
       popular: true,
-      hasDetailPage: false,
+      hasDetailPage: true,
     },
     {
       slug: "luminous-lagoon",
@@ -403,7 +403,7 @@ export const siteConfig = {
       image:
         "https://images.unsplash.com/photo-1519046904212-407b7196a9d8?auto=format&fit=crop&w=800&q=80",
       popular: false,
-      hasDetailPage: false,
+      hasDetailPage: true,
     },
     {
       slug: "party-catamaran",
@@ -478,7 +478,7 @@ export const siteConfig = {
       image:
         "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=800&q=80",
       popular: true,
-      hasDetailPage: false,
+      hasDetailPage: true,
     },
     {
       slug: "atv-zipline-dunns-river-combo",
@@ -538,7 +538,7 @@ export const siteConfig = {
       image:
         "https://images.unsplash.com/photo-1567894340315-735d7c361db0?auto=format&fit=crop&w=800&q=80",
       popular: true,
-      hasDetailPage: false,
+      hasDetailPage: true,
     },
     {
       slug: "private-catamaran-charter",
@@ -598,7 +598,7 @@ export const siteConfig = {
       image:
         "https://images.unsplash.com/photo-1500375592092-40eb6668c21a?auto=format&fit=crop&w=800&q=80",
       popular: false,
-      hasDetailPage: false,
+      hasDetailPage: true,
     },
     {
       slug: "ys-falls",
@@ -628,7 +628,7 @@ export const siteConfig = {
       image:
         "https://images.unsplash.com/photo-1505118389757-91dd49627c00?auto=format&fit=crop&w=800&q=80",
       popular: true,
-      hasDetailPage: false,
+      hasDetailPage: true,
     },
     {
       slug: "seven-mile-beach",
@@ -688,7 +688,7 @@ export const siteConfig = {
       image:
         "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80",
       popular: true,
-      hasDetailPage: false,
+      hasDetailPage: true,
     },
     {
       slug: "rose-hall-great-house",
@@ -703,7 +703,7 @@ export const siteConfig = {
       image:
         "https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?auto=format&fit=crop&w=800&q=80",
       popular: true,
-      hasDetailPage: false,
+      hasDetailPage: true,
     },
     {
       slug: "romantic-beach-dinner",
@@ -718,7 +718,7 @@ export const siteConfig = {
       image:
         "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=800&q=80",
       popular: true,
-      hasDetailPage: false,
+      hasDetailPage: true,
     },
     {
       slug: "drone-aerial-package",
@@ -732,7 +732,7 @@ export const siteConfig = {
       highlights: ["Aerial drone coverage", "Edited photos + 4K video", "Add-on to any tour"],
       image: "/images/tours/clear-kayak/01-hero-drone.jpeg",
       popular: true,
-      hasDetailPage: false,
+      hasDetailPage: true,
     },
   ],
 
@@ -1058,12 +1058,12 @@ export const siteConfig = {
   },
 
   nav: [
-    { label: "Tours", href: "/#tours" },
-    { label: "Resorts", href: "/#resorts" },
-    { label: "Transfers", href: "/#transfers" },
-    { label: "Nightlife", href: "/#nightlife" },
-    { label: "Locations", href: "/locations/montego-bay" },
-    { label: "Contact", href: "/#contact" },
+    { label: "Tours", href: "/tours" },
+    { label: "Resorts", href: "/resorts" },
+    { label: "Transfers", href: "/transfers" },
+    { label: "Nightlife", href: "/nightlife" },
+    { label: "Locations", href: "/locations" },
+    { label: "Contact", href: "/contact" },
   ],
 } as const;
 

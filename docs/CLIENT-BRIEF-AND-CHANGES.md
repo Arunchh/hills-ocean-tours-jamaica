@@ -24,6 +24,7 @@
 13. [Future Recommendations](#13-future-recommendations)
 14. [Suggestions A–G Implementation (August 2026)](#14-suggestions-ag-implementation-august-2026)
 15. [August 2, 2026 — Contact, Instagram & Marketing Expansion](#15-august-2-2026--contact-instagram--marketing-expansion)
+16. [August 2, 2026 — Multi-Page SEO Split](#16-august-2-2026--multi-page-seo-split)
 
 ---
 
@@ -143,52 +144,53 @@ Luxury / non-luxury tiers     →    One brand, one fleet
 
 ## 5. Homepage Architecture (After Changes)
 
-### Section Order (Current — August 2, 2026)
+### Site Architecture (August 2, 2026 — Multi-Page)
 
-| Order | Section | Anchor | Rationale |
-|-------|---------|--------|-----------|
-| — | Promo Banner | — | Subtle offers (disabled by default) |
-| — | Header | — | Nav + phone + WhatsApp |
-| 1 | Hero | — | Primary: Browse Tours; Secondary: Transfers |
-| 2 | Trust Bar | — | Operational trust (not fake stats) |
-| 3 | Featured Tours | `#featured` | Clear Kayak + Jet Car with full pricing |
-| 4 | Drone Showcase | `#drone` | Instagram differentiator — aerial photo/video deliverables |
-| 5 | Tour Catalog | `#tours` | Filterable catalog (Single/Combo + 7 categories) |
-| 6 | Transfer Quote | `#transfers` | Airport/cruise transfer form → WhatsApp |
-| 7 | Resort Pickup | `#resorts` | Zone cards linking to resort landing pages |
-| 8 | How It Works | `#how-it-works` | 50% deposit + 7-day cancel |
-| 9 | Value Props | — | Local specialist messaging |
-| 10 | Services | `#services` | 5 category overview cards |
-| 11 | Transport Policy | `#pickup` | Pickup fees and out-of-area resort list |
-| 12 | Service Area Map | `#service-area` | MoBay/Ochi/Falmouth + OSM map + link to resort zones |
-| 13 | Nightlife | `#nightlife` | Packages, venues, party resorts — WhatsApp CTAs |
-| 14 | Testimonials | `#reviews` | Awaiting real client reviews |
-| 15 | FAQ | `#faq` | Booking, deposits, nightlife, resort pickup |
-| 16 | Contact | `#contact` | Form + WhatsApp + phone + email |
-| — | Mobile CTA | — | WhatsApp (largest) → Book Tour → Call |
+The site is **no longer a single scrolling homepage**. It uses a **hub-and-spoke model**:
 
-### Section Order (August 1, 2026 — Before Marketing Expansion)
+| URL | Purpose | Priority |
+|-----|---------|----------|
+| `/[locale]` | Homepage hub — hero, featured tours, explore cards, trust | Conversion entry |
+| `/[locale]/tours` | Full catalog + drone showcase | Primary SEO |
+| `/[locale]/tours/[slug]` | Individual tour detail (13 tours) | High-intent SEO |
+| `/[locale]/transfers` | Airport/cruise transfer form + pickup policy | High-intent SEO |
+| `/[locale]/nightlife` | Nightlife packages and venues | Niche SEO |
+| `/[locale]/resorts` | Resort zone index | Resort SEO hub |
+| `/[locale]/resorts/[slug]` | Zone landing pages (4 zones) | Resort long-tail |
+| `/[locale]/locations` | Location guide index | Area SEO hub |
+| `/[locale]/locations/[slug]` | MoBay, Falmouth, Ochi guides | Area long-tail |
+| `/[locale]/contact` | Contact form + FAQ | Support / conversion |
+| `/[locale]/blog` + `/blog/[slug]` | SEO content hub | Content marketing |
 
-```
-Hero → TrustBar → FeaturedTours → TourCatalog → TransferQuote → HowItWorks →
-ValueProps → Services → TransportPolicy → ServiceAreaMap → Nightlife →
-Testimonials → FAQ → Contact
-```
+**Static pages generated:** 146 (4 locales × routes + dynamic slugs).
 
-**August 2 additions:** `DroneShowcase` after Featured; `ResortPickup` after Transfer Quote; Nightlife section fully redesigned; nav updated with Resorts + Nightlife.
+### Homepage Sections (Current — Slim Hub)
+
+| Order | Section | Notes |
+|-------|---------|-------|
+| 1 | Hero | CTAs → `/tours` and `/transfers` |
+| 2 | Trust Bar | Policy facts |
+| 3 | Featured Tours | 2 priced experiences + link to `/tours` |
+| 4 | Home Explore | 6 cards linking to dedicated pages |
+| 5 | How It Works | Booking flow |
+| 6 | Value Props | Positioning |
+| 7 | Services | Category overview |
+| 8 | Testimonials | Social proof |
+
+**Moved off homepage** (now dedicated routes): full tour catalog, transfers, nightlife, resorts, contact/FAQ, service area map, drone showcase.
 
 ### Navigation (Current)
 
 | Label | Href |
 |-------|------|
-| Tours | `/#tours` |
-| Resorts | `/#resorts` |
-| Transfers | `/#transfers` |
-| Nightlife | `/#nightlife` |
-| Locations | `/locations/montego-bay` |
-| Contact | `/#contact` |
+| Tours | `/tours` |
+| Resorts | `/resorts` |
+| Transfers | `/transfers` |
+| Nightlife | `/nightlife` |
+| Locations | `/locations` |
+| Contact | `/contact` |
 
-**Removed from nav (still on page):** Featured, Pickup, Reviews — accessible via section scroll or footer links.
+Nav uses **route paths**, not hash anchors (`/#tours` removed).
 
 ---
 

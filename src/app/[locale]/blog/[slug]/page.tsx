@@ -145,7 +145,7 @@ export default async function BlogPostPage({ params }: Props) {
               })}
             </p>
             <div className="mt-6">
-              <Button href={localizeHref("/#contact", locale)} variant="primary" fullWidthMobile>
+              <Button href={localizeHref("/contact", locale)} variant="primary" fullWidthMobile>
                 {ui.common.needTransferCtaButton}
               </Button>
             </div>

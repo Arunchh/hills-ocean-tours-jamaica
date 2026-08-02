@@ -6,10 +6,11 @@ import { Button } from "@/components/ui/Button";
 import { JamaicaStripe } from "@/components/ui/JamaicaStripe";
 import { useI18n } from "@/i18n/LocaleProvider";
 import { formatUi } from "@/i18n/index";
+import { localizeHref } from "@/i18n/paths";
 import { formatPhoneLink, formatWhatsAppLink } from "@/lib/utils";
 
 export function Hero() {
-  const { siteConfig, ui } = useI18n();
+  const { siteConfig, ui, locale } = useI18n();
   const whatsappMessage = formatUi(ui.contact.whatsappResort, {
     business: siteConfig.business.name,
   });
@@ -49,11 +50,11 @@ export function Hero() {
           </p>
 
           <div className="mt-6 flex flex-col gap-2.5 sm:mt-10 sm:flex-row sm:items-center sm:gap-4">
-            <Button href="#tours" variant="primary" fullWidthMobile>
+            <Button href={localizeHref("/tours", locale)} variant="primary" fullWidthMobile>
               {siteConfig.hero.primaryCta}
               <ArrowRight className="h-4 w-4" />
             </Button>
-            <Button href="#transfers" variant="gold" fullWidthMobile>
+            <Button href={localizeHref("/transfers", locale)} variant="gold" fullWidthMobile>
               {siteConfig.hero.secondaryCta}
             </Button>
           </div>

@@ -67,7 +67,7 @@ export default async function ResortPage({ params }: Props) {
         <div className="safe-top rasta-gradient-bg pb-10 pt-24 sm:pb-12 sm:pt-28">
           <div className="mx-auto max-w-5xl px-4 sm:px-6">
             <Link
-              href={localizeHref("/#resorts", locale)}
+              href={localizeHref("/resorts", locale)}
               className="mb-6 inline-flex min-h-12 touch-manipulation items-center gap-2 rounded-lg px-2 text-sm font-semibold text-jamaica-gold active:text-white sm:hover:text-white"
             >
               <ArrowLeft className="h-4 w-4" />

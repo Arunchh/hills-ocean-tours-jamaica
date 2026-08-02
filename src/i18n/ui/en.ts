@@ -288,4 +288,86 @@ export const uiEn: UiMessages = {
     error: "Something went wrong. Please WhatsApp or call us directly.",
     mailtoSuccess: "Your email app should open — send the message to complete your request.",
   },
+  pages: {
+    tours: {
+      eyebrow: "Full Catalog",
+      title: "All Tours & Activities in Montego Bay",
+      description:
+        "Browse water sports, adventure, day trips, culture, combos, and private yacht charters. Filter by category or message us on WhatsApp for a custom quote.",
+    },
+    transfers: {
+      eyebrow: "Airport & Cruise",
+      title: "Montego Bay & Falmouth Transfers",
+      description:
+        "Pre-book Sangster Airport (MBJ) pickups, cruise port transfers at Falmouth, and resort-to-resort transport. Quote confirmed on WhatsApp before you pay your deposit.",
+    },
+    nightlife: {
+      eyebrow: "After Dark",
+      title: "Montego Bay Nightlife Packages",
+      description:
+        "Round-trip transport to Lounge 2727, Margaritaville, Pier One, and more. We plan your night so you don't worry about taxis or timing.",
+    },
+    resorts: {
+      eyebrow: "Hotel Pickup",
+      title: "Tours from Your Resort Zone",
+      description:
+        "Rose Hall, Hip Strip, out-of-area all-inclusives, and Ocho Rios resorts — pickup policies and recommended tours for where you're staying.",
+    },
+    contact: {
+      eyebrow: "Get in Touch",
+      title: "Book a Tour or Request a Quote",
+      description:
+        "Tell us your hotel, date, and group size. We reply on WhatsApp within 2 hours during business hours — no automated checkout.",
+    },
+    locations: {
+      eyebrow: "Service Areas",
+      title: "Tours by Location",
+      description:
+        "Montego Bay, Falmouth cruise port, and Ocho Rios — browse transfers and excursions for each area we serve.",
+    },
+  },
+  homeExplore: {
+    eyebrow: "Explore",
+    title: "Everything We Offer — By Topic",
+    description:
+      "Each section has its own page for easier browsing and sharing. WhatsApp booking on every experience.",
+    links: [
+      {
+        href: "/tours",
+        title: "Tours & Activities",
+        description: "Full catalog — clear kayak, waterfalls, ATV, combos, yacht charters, and more.",
+        cta: "Browse all tours",
+      },
+      {
+        href: "/transfers",
+        title: "Airport & Cruise Transfers",
+        description: "MBJ airport pickup, Falmouth cruise port, and resort transport quotes.",
+        cta: "Book a transfer",
+      },
+      {
+        href: "/resorts",
+        title: "Resort Pickup Zones",
+        description: "Hyatt Rose Hall, RIU, Grand Palladium, Sandals Ochi — tours from your hotel.",
+        cta: "Find your zone",
+      },
+      {
+        href: "/nightlife",
+        title: "Nightlife Packages",
+        description: "Hip Strip nights out with round-trip transport from your hotel.",
+        cta: "Plan your night",
+      },
+      {
+        href: "/locations",
+        title: "Guides par zone",
+        description: "MoBay, Falmouth et Ocho Rios — excursions et transferts par région.",
+        cta: "Voir les zones",
+      },
+      {
+        href: "/blog",
+        title: "Travel Guides & Tips",
+        description: "SEO guides for airport transfers, cruise ports, resorts, and combo tours.",
+        cta: "Read the blog",
+      },
+    ],
+  },
 };

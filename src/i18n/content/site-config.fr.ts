@@ -254,12 +254,11 @@ export const siteConfigFr: SiteConfig = {
     },
   ],
   nav: [
-    { label: "Excursions", href: "/#tours" },
-    { label: "Transferts", href: "/#transfers" },
-    { label: "Destinations", href: "/locations/montego-bay" },
-    { label: "À la une", href: "/#featured" },
-    { label: "Prise en charge", href: "/#pickup" },
-    { label: "Avis", href: "/#reviews" },
-    { label: "Contact", href: "/#contact" },
+    { label: "Excursions", href: "/tours" },
+    { label: "Resorts", href: "/resorts" },
+    { label: "Transferts", href: "/transfers" },
+    { label: "Nightlife", href: "/nightlife" },
+    { label: "Destinations", href: "/locations" },
+    { label: "Contact", href: "/contact" },
   ],
 } as unknown as SiteConfig;

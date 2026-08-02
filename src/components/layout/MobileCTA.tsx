@@ -27,7 +27,7 @@ export function MobileCTA() {
           <span className="truncate">{ui.common.whatsapp}</span>
         </a>
         <a
-          href={localizeHref("/#tours", locale)}
+          href={localizeHref("/tours", locale)}
           className="mobile-cta-btn flex min-h-[3rem] flex-1 touch-manipulation items-center justify-center gap-1 rounded-2xl bg-rasta-red py-2.5 text-xs font-bold leading-none text-white active:scale-[0.97] sm:text-sm"
         >
           <Compass className="h-4 w-4 shrink-0" aria-hidden="true" />

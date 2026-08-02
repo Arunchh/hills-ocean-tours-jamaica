@@ -104,6 +104,12 @@ export function FeaturedTours() {
             );
           })}
         </div>
+
+        <div className="mt-10 text-center">
+          <Button href={localizeHref("/tours", locale)} variant="secondary">
+            {ui.common.allTours}
+          </Button>
+        </div>
       </div>
     </section>
   );

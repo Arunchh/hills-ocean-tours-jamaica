@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, Clock, MapPin, CheckCircle, XCircle } from "lucide-react";
-import { getTourDetail } from "@/content/tour-details";
+import { getTourPageData, getTourDetailSlugs } from "@/lib/tour-page-data";
 import { getContent, getUi, formatUi } from "@/i18n/index";
 import { localizeHref, localizedPath } from "@/i18n/paths";
 import { isLocale, locales, type Locale } from "@/i18n/config";
@@ -18,7 +18,7 @@ type Props = { params: Promise<{ locale: string; slug: string }> };
 
 export function generateStaticParams() {
   return locales.flatMap((locale) =>
-    ["clear-kayak-photoshoot", "jet-car-rental"].map((slug) => ({ locale, slug }))
+    getTourDetailSlugs(getContent("en").siteConfig).map((slug) => ({ locale, slug }))
   );
 }
 
@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale: localeParam, slug } = await params;
   if (!isLocale(localeParam)) return {};
 
-  const tour = getTourDetail(slug);
+  const tour = getTourPageData(slug, getContent(localeParam).siteConfig);
   if (!tour) return {};
 
   const { siteConfig } = getContent(localeParam);
@@ -45,10 +45,10 @@ export default async function TourDetailPage({ params }: Props) {
   if (!isLocale(localeParam)) notFound();
 
   const locale = localeParam as Locale;
-  const tour = getTourDetail(slug);
+  const { siteConfig } = getContent(locale);
+  const tour = getTourPageData(slug, siteConfig);
   if (!tour) notFound();
 
-  const { siteConfig } = getContent(locale);
   const ui = getUi(locale);
 
   const whatsappMessage = formatUi(ui.contact.whatsappTour, {
@@ -63,7 +63,7 @@ export default async function TourDetailPage({ params }: Props) {
         <div className="safe-top rasta-gradient-bg pb-10 pt-24 sm:pb-12 sm:pt-28">
           <div className="mx-auto max-w-4xl px-4 sm:px-6">
             <Link
-              href={localizeHref("/#tours", locale)}
+              href={localizeHref("/tours", locale)}
               className="mb-6 inline-flex min-h-12 touch-manipulation items-center gap-2 rounded-lg px-2 text-sm font-semibold text-jamaica-gold active:text-white sm:hover:text-white"
             >
               <ArrowLeft className="h-4 w-4" />
@@ -118,24 +118,43 @@ export default async function TourDetailPage({ params }: Props) {
               {tour.pricingNote && (
                 <p className="mt-2 text-sm text-jamaica-black-soft/80">{tour.pricingNote}</p>
               )}
-              <div className="mt-4 space-y-3">
-                {tour.pricingTiers.map((tier) => (
-                  <div
-                    key={tier.name}
-                    className="flex flex-col gap-1 rounded-xl border border-jamaica-green/15 bg-jamaica-cream p-4 sm:flex-row sm:items-center sm:justify-between"
+              {tour.quoteOnly || tour.pricingTiers.length === 0 ? (
+                <div className="mt-4 rounded-2xl border-2 border-jamaica-green/15 bg-jamaica-cream p-6 text-center">
+                  <p className="font-display text-lg font-bold text-jamaica-black">
+                    {ui.common.getQuote}
+                  </p>
+                  <p className="mt-2 text-sm text-jamaica-black-soft/80">
+                    Message us on WhatsApp with your hotel, date, and group size for a personal quote.
+                  </p>
+                  <Button
+                    href={formatWhatsAppLink(siteConfig.business.whatsapp, whatsappMessage)}
+                    variant="primary"
+                    external
+                    className="mt-4"
                   >
-                    <div>
-                      <p className="font-bold text-jamaica-black">{tier.name}</p>
-                      {tier.note && (
-                        <p className="text-xs text-jamaica-black-soft/70">{tier.note}</p>
-                      )}
+                    {ui.common.whatsappUs}
+                  </Button>
+                </div>
+              ) : (
+                <div className="mt-4 space-y-3">
+                  {tour.pricingTiers.map((tier) => (
+                    <div
+                      key={tier.name}
+                      className="flex flex-col gap-1 rounded-xl border border-jamaica-green/15 bg-jamaica-cream p-4 sm:flex-row sm:items-center sm:justify-between"
+                    >
+                      <div>
+                        <p className="font-bold text-jamaica-black">{tier.name}</p>
+                        {tier.note && (
+                          <p className="text-xs text-jamaica-black-soft/70">{tier.note}</p>
+                        )}
+                      </div>
+                      <p className="font-display text-xl font-bold text-jamaica-green">
+                        {formatPrice(tier.price)} USD
+                      </p>
                     </div>
-                    <p className="font-display text-xl font-bold text-jamaica-green">
-                      {formatPrice(tier.price)} USD
-                    </p>
-                  </div>
-                ))}
-              </div>
+                  ))}
+                </div>
+              )}
             </section>
 
             {/* Itinerary */}
@@ -290,10 +309,16 @@ export default async function TourDetailPage({ params }: Props) {
                 {ui.common.deposit} & Payment
               </h2>
               <p className="mt-4 text-2xl font-bold text-white">
-                {formatPrice(tour.deposit.amount)} {ui.common.perPerson}{" "}
-                <span className="text-sm font-normal text-white/70">
-                  ({ui.common.nonRefundable})
-                </span>
+                {tour.deposit.amount > 0 ? (
+                  <>
+                    {formatPrice(tour.deposit.amount)} {ui.common.perPerson}{" "}
+                    <span className="text-sm font-normal text-white/70">
+                      ({ui.common.nonRefundable})
+                    </span>
+                  </>
+                ) : (
+                  <span className="text-lg">50% deposit via CashApp or Zelle</span>
+                )}
               </p>
               <p className="mt-2 text-sm text-white/80">
                 Pay via {tour.deposit.methods.join(" or ")} to secure your booking.
@@ -325,7 +350,7 @@ export default async function TourDetailPage({ params }: Props) {
                     if (!similar) return null;
                     const href = similar.hasDetailPage
                       ? localizeHref(`/tours/${similarSlug}`, locale)
-                      : localizeHref("/#tours", locale);
+                      : localizeHref("/tours", locale);
                     return (
                       <Link
                         key={similarSlug}
@@ -358,7 +383,7 @@ export default async function TourDetailPage({ params }: Props) {
                 >
                   {ui.common.whatsappUs}
                 </Button>
-                <Button href={localizeHref("/#contact", locale)} variant="secondary" fullWidthMobile>
+                <Button href={localizeHref("/contact", locale)} variant="secondary" fullWidthMobile>
                   {ui.common.getQuote}
                 </Button>
               </div>

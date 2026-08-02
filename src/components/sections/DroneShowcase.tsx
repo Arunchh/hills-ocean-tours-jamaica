@@ -86,7 +86,7 @@ export function DroneShowcase() {
                 {ui.common.exploreDronePackage}
               </Button>
               <Button
-                href={localizeHref("/#featured", locale)}
+                href={localizeHref("/tours", locale)}
                 variant="outline"
                 className="!border-jamaica-green/30 !bg-white !text-jamaica-green hover:!bg-jamaica-green-light"
               >
