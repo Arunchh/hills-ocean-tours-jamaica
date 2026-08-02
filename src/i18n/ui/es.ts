@@ -1,4 +1,374 @@
 import type { UiMessages } from "../types";
-import { uiEn } from "./en";
 
-export const uiEs: UiMessages = uiEn;
+export const uiEs: UiMessages = {
+  common: {
+    getQuote: "Solicitar cotización",
+    call: "Llamar",
+    whatsapp: "WhatsApp",
+    quote: "Cotización",
+    fromPriceUsd: "Desde {price} USD",
+    fromPriceUsdPerPerson: "Desde {price} USD / persona",
+    readMore: "Leer más →",
+    backToHome: "Volver al inicio",
+    allGuides: "Todas las guías",
+    allTours: "Todas las excursiones",
+    openMenu: "Abrir menú",
+    closeMenu: "Cerrar menú",
+    usTravelers: "viajeros",
+    whatsappUs: "Escríbenos por WhatsApp",
+    bookTour: "Reservar excursión",
+    language: "Idioma",
+    jtbLicense: "Licencia JTB:",
+    allRightsReserved: "Todos los derechos reservados.",
+    followUs: "Síguenos",
+    quickLinks: "Enlaces rápidos",
+    contact: "Contacto",
+    facebook: "Facebook",
+    instagram: "Instagram",
+    fanFavorite: "Popular",
+    featuredExperience: "Destacado",
+    popular: "Popular",
+    viewDetails: "Ver detalles",
+    bookThisTour: "Reservar esta excursión",
+    bookCityTour: "Reservar excursión en {city}",
+    popularResorts: "Resorts populares que atendemos",
+    cityToursImageAlt: "Excursiones en {city}, Jamaica",
+    needTransferCtaTitle: "¿Listo para reservar?",
+    needTransferCtaDescription:
+      "Escríbele a {business} por WhatsApp — respondemos rápido con disponibilidad y precios.",
+    needTransferCtaButton: "Reservar por WhatsApp",
+    countryName: "Jamaica",
+    pricesInUsd: "Todos los precios en USD",
+    deposit: "Depósito",
+    perPerson: "por persona",
+    nonRefundable: "No reembolsable",
+    whatToBring: "Qué llevar",
+    whatsIncluded: "Qué incluye",
+    recommendedTime: "Horario recomendado",
+    businessHours: "Horario de atención",
+    responseTime: "Tiempo de respuesta",
+    similarTours: "Experiencias similares",
+    itinerary: "Itinerario",
+    notIncluded: "No incluido",
+    credentials: "Credenciales",
+    viewLocationGuide: "Ver guía de la zona",
+    allLocations: "Todas las zonas de servicio",
+    viewResortGuide: "Ver guía de recogida en resort",
+    allResortZones: "Todas las zonas de resorts",
+    bookNightlifePackage: "Reservar paquete de vida nocturna",
+    exploreDronePackage: "Ver paquete de kayak transparente",
+    adultsOnly: "Solo adultos 18+",
+    includes: "Incluye",
+    fromYourResort: "Excursiones desde tu resort",
+  },
+  sections: {
+    services: {
+      eyebrow: "Lo que ofrecemos",
+      title: "Excursiones y experiencias en Montego Bay",
+      description:
+        "Deportes acuáticos, aventura, excursiones de un día y transporte privado — todo lo que necesitas para unas vacaciones inolvidables en Jamaica.",
+    },
+    featured: {
+      eyebrow: "Experiencias destacadas",
+      title: "Precios completos — sin sorpresas",
+      description:
+        "Nuestras experiencias más populares con tarifas completas en USD, información del depósito y qué está incluido.",
+    },
+    tourCatalog: {
+      eyebrow: "Explorar por categoría",
+      title: "Todas las excursiones y actividades",
+      description:
+        "Filtra por agua, aventura o excursiones de un día. Las excursiones sin precio publicado están disponibles — solicita una cotización.",
+    },
+    excursions: {
+      eyebrow: "Catálogo completo",
+      title: "Todas nuestras experiencias",
+      description:
+        "Desde sesiones de kayak transparente con dron hasta las cataratas Dunn's River — tu operador local en Montego Bay para todo.",
+    },
+    howItWorks: {
+      eyebrow: "Reserva fácil",
+      title: "4 pasos — listo",
+      description:
+        "Sin apps complicadas. Escríbenos por WhatsApp, paga tu depósito, te recogemos y disfrutas.",
+    },
+    testimonials: {
+      eyebrow: "Opiniones de huéspedes",
+      title: "Lo que dicen los viajeros",
+      description:
+        "Parejas, familias y grupos que reservaron kayak transparente, jet cars y excursiones de un día con nosotros.",
+    },
+    faq: {
+      eyebrow: "Preguntas frecuentes",
+      title: "Preguntas comunes",
+      description:
+        "Precios, depósitos, recogida y qué incluye — respuestas directas.",
+    },
+    contact: {
+      eyebrow: "Reserva tu experiencia",
+      title: "Obtén una cotización o reserva ahora",
+      description:
+        "Cuéntanos tu hotel, la excursión que te interesa y tu fecha de viaje. {responseTime}",
+    },
+    transportCta: {
+      title: "¿No sabes si la recogida en hotel está incluida?",
+      description:
+        "Escríbenos el nombre de tu resort — confirmaremos los cargos de transporte antes de reservar.",
+      button: "Preguntar por recogida",
+    },
+    transferQuote: {
+      eyebrow: "Traslados aeropuerto y crucero",
+      title: "Solicita cotización de traslado",
+      description:
+        "Reserva con anticipación traslados desde el aeropuerto o el puerto de cruceros de Falmouth. Completa tus datos y envía la solicitud directamente por WhatsApp.",
+      submit: "Enviar solicitud de traslado por WhatsApp",
+      whatsappNote:
+        "Confirmamos precio y hora de recogida por WhatsApp — normalmente en pocas horas. Una marca, una flota, sin ventas de lujo innecesarias.",
+    },
+    serviceArea: {
+      eyebrow: "Dónde operamos",
+      title: "Montego Bay, Ocho Rios y la costa norte",
+      description:
+        "Atendemos los resorts y puertos donde realmente se hospedan los visitantes de la costa norte — Kingston no está en nuestra zona de servicio.",
+    },
+    promoBanner: {
+      dismiss: "Cerrar promoción",
+    },
+    locations: {
+      eyebrow: "Guías por zona",
+      title: "Excursiones por área",
+      description: "Explora experiencias y traslados para cada zona que atendemos.",
+    },
+    nightlife: {
+      eyebrow: "Vida nocturna",
+      title: "Montego Bay de noche",
+      description: "Paquetes de vida nocturna con transporte ida y vuelta desde tu hotel.",
+      packagesTitle: "Paquetes de vida nocturna",
+      venuesTitle: "A dónde te llevamos",
+      partyResortsTitle: "Huéspedes de resorts animados bienvenidos",
+    },
+    resortPickup: {
+      eyebrow: "Recogida en resort",
+      title: "Te recogemos donde te hospedas",
+      description: "Explora excursiones y políticas de transporte para tu zona de resort.",
+    },
+    droneShowcase: {
+      eyebrow: "Dron y medios",
+      title: "Contenido aéreo en tu excursión",
+      description: "Paquetes profesionales de foto y video con dron.",
+      deliverablesTitle: "Lo que recibes",
+    },
+  },
+  locations: {
+    popularTours: "Excursiones y traslados populares",
+    exploreGuide: "Explorar otras zonas",
+    backToLocations: "Volver a zonas de servicio",
+  },
+  resorts: {
+    popularTours: "Excursiones recomendadas desde esta zona",
+    resortsWeServe: "Resorts donde recogemos",
+    pickupPolicy: "Política de recogida",
+    transportNote: "Tiempos de viaje",
+    exploreZones: "Explorar otras zonas de resorts",
+    backToResorts: "Todas las zonas de resorts",
+    faqTitle: "Preguntas frecuentes de la zona",
+  },
+  tourKind: {
+    all: "Todas las excursiones",
+    single: "Excursiones individuales",
+    combo: "Excursiones combinadas",
+  },
+  transferForm: {
+    tripType: "Tipo de traslado *",
+    pickup: "Lugar de recogida *",
+    dropoff: "Lugar de destino *",
+    date: "Fecha *",
+    time: "Hora de recogida",
+    passengers: "Pasajeros *",
+    luggage: "Equipaje / Notas",
+    roundTrip: "Ida y vuelta",
+    tripTypes: [
+      { value: "airport-pickup", label: "Recogida en aeropuerto (MBJ → hotel)" },
+      { value: "airport-dropoff", label: "Traslado al aeropuerto (hotel → MBJ)" },
+      { value: "cruise-port", label: "Traslado puerto de cruceros Falmouth" },
+      { value: "hotel-transfer", label: "Traslado hotel / resort" },
+      { value: "other", label: "Otro" },
+    ],
+    placeholders: {
+      pickup: "ej. Aeropuerto Sangster o Secrets St. James",
+      dropoff: "ej. Grand Palladium o puerto de cruceros Falmouth",
+      time: "14:30",
+      passengers: "4",
+      luggage: "4 maletas grandes",
+    },
+    whatsappTemplate:
+      "Hola {business}, me gustaría una cotización de traslado.\n\nTipo: {tripType}\nRecogida: {pickup}\nDestino: {dropoff}\nFecha: {date}\nHora: {time}\nPasajeros: {passengers}\nEquipaje: {luggage}\nIda y vuelta: {roundTrip}",
+  },
+  tourTypes: {
+    transfer: "Traslado",
+    excursion: "Excursión",
+    activity: "Actividad",
+    combo: "Excursión combinada",
+  },
+  contact: {
+    whatsappQuote: "Hola {business}, me gustaría una cotización para una excursión, por favor.",
+    whatsappResort: "Hola {business}, me interesa reservar una experiencia en Montego Bay.",
+    whatsappTour:
+      "Hola {business}, me interesa la experiencia {tour}. Mi hotel es [HOTEL]. Fecha: [FECHA]. Tamaño del grupo: [N].",
+    callDirect: "Llamar directamente",
+    whatsappFastest: "WhatsApp (más rápido)",
+    messageUsNow: "Escríbenos ahora",
+    emailLabel: "Correo electrónico",
+    form: {
+      fullName: "Nombre completo *",
+      email: "Correo electrónico *",
+      phone: "Teléfono / WhatsApp",
+      resort: "Tu hotel / Airbnb *",
+      service: "Experiencia *",
+      travelDate: "Fecha preferida",
+      guests: "Número de huéspedes",
+      details: "Otros detalles",
+      submit: "Solicitar cotización",
+      submitting: "Enviando...",
+      disclaimer: "Respondemos en 2 horas. Sin spam, sin compromiso.",
+      placeholders: {
+        name: "Tu nombre",
+        email: "tu@email.com",
+        phone: "+1 (555) 123-4567",
+        guests: "2",
+        details: "Preferencias de excursión, solicitudes especiales...",
+        selectResort: "Selecciona tu hotel",
+        selectService: "Selecciona una experiencia",
+      },
+      resortOptions: [
+        "Montego Bay — Hip Strip / Ciudad",
+        "Hyatt Zilara / Ziva Rose Hall",
+        "Hilton Rose Hall",
+        "RIU Montego Bay",
+        "Sandals Montego Bay",
+        "Breathless Montego Bay",
+        "Secrets St. James",
+        "Grand Palladium Jamaica",
+        "Royalton Blue Waters",
+        "Excellence Oyster Bay",
+        "Sandals Ochi / Moon Palace",
+        "Otro hotel / Airbnb",
+      ],
+      serviceOptions: [
+        { value: "Clear Kayak Photoshoot", label: "Sesión de fotos en kayak transparente" },
+        { value: "Jet Car Rental", label: "Alquiler de jet car" },
+        { value: "Drone Photo & Video Package", label: "Paquete de foto y video con dron" },
+        { value: "ATV Adventure", label: "Aventura en ATV" },
+        { value: "Combo Tour", label: "Paquete de excursión combinada" },
+        { value: "Private Yacht Charter", label: "Alquiler de yate privado" },
+        { value: "Airport / Cruise Transfer", label: "Traslado aeropuerto / crucero" },
+        { value: "Blue Hole", label: "Blue Hole (Ocho Rios)" },
+        { value: "Dunn's River Falls", label: "Cataratas Dunn's River" },
+        { value: "Rick's Café Sunset", label: "Atardecer en Rick's Café (Negril)" },
+        { value: "9 Mile Bob Marley Tour", label: "Tour 9 Mile Bob Marley" },
+        { value: "Rose Hall Great House", label: "Rose Hall Great House" },
+        { value: "Romantic Beach Dinner", label: "Cena romántica en la playa" },
+        { value: "Nightlife Package", label: "Paquete de vida nocturna (MoBay)" },
+        { value: "Party Catamaran", label: "Crucero en catamarán fiestero" },
+        { value: "Horseback Riding", label: "Paseo a caballo" },
+        { value: "Other", label: "Otro" },
+      ],
+    },
+  },
+  blog: {
+    indexTitle: "Guías de viaje de Montego Bay",
+    indexSubtitle: "Consejos para excursiones, deportes acuáticos y moverse por Montego Bay.",
+    metadataTitle: "Blog de viaje Montego Bay — Excursiones y consejos",
+    metadataDescription:
+      "Guías para excursiones en Montego Bay — kayak transparente, jet cars, excursiones de un día y consejos de vida nocturna.",
+    indexDescription:
+      "Guías para excursiones en Montego Bay — kayak transparente, jet cars, excursiones de un día y consejos de vida nocturna.",
+  },
+  form: {
+    success: "¡Gracias! Responderemos por WhatsApp o correo en 2 horas.",
+    error: "Algo salió mal. Escríbenos o llámanos directamente por WhatsApp.",
+    mailtoSuccess: "Tu app de correo debería abrirse — envía el mensaje para completar tu solicitud.",
+  },
+  pages: {
+    tours: {
+      eyebrow: "Catálogo completo",
+      title: "Todas las excursiones y actividades en Montego Bay",
+      description:
+        "Explora deportes acuáticos, aventura, excursiones de un día, cultura, combos y yates privados. Filtra por categoría o escríbenos por WhatsApp para una cotización personalizada.",
+    },
+    transfers: {
+      eyebrow: "Aeropuerto y crucero",
+      title: "Traslados Montego Bay y Falmouth",
+      description:
+        "Reserva recogidas en el aeropuerto Sangster (MBJ), traslados al puerto de cruceros de Falmouth y transporte entre resorts. Cotización confirmada por WhatsApp antes de pagar el depósito.",
+    },
+    nightlife: {
+      eyebrow: "De noche",
+      title: "Paquetes de vida nocturna en Montego Bay",
+      description:
+        "Transporte ida y vuelta a Lounge 2727, Margaritaville, Pier One y más. Planificamos tu noche para que no te preocupes por taxis ni horarios.",
+    },
+    resorts: {
+      eyebrow: "Recogida en hotel",
+      title: "Excursiones desde tu zona de resort",
+      description:
+        "Rose Hall, Hip Strip, all-inclusives fuera de zona y resorts de Ocho Rios — políticas de recogida y excursiones recomendadas para donde te hospedas.",
+    },
+    contact: {
+      eyebrow: "Contáctanos",
+      title: "Reserva una excursión o solicita cotización",
+      description:
+        "Cuéntanos tu hotel, fecha y tamaño del grupo. Respondemos por WhatsApp en 2 horas en horario laboral — sin checkout automático.",
+    },
+    locations: {
+      eyebrow: "Zonas de servicio",
+      title: "Excursiones por ubicación",
+      description:
+        "Montego Bay, puerto de cruceros de Falmouth y Ocho Rios — explora traslados y excursiones para cada zona que atendemos.",
+    },
+  },
+  homeExplore: {
+    eyebrow: "Explorar",
+    title: "Todo lo que ofrecemos — por tema",
+    description:
+      "Cada sección tiene su propia página para navegar y compartir más fácil. Reserva por WhatsApp en cada experiencia.",
+    links: [
+      {
+        href: "/tours",
+        title: "Excursiones y actividades",
+        description: "Catálogo completo — kayak transparente, cataratas, ATV, combos, yates y más.",
+        cta: "Ver todas las excursiones",
+      },
+      {
+        href: "/transfers",
+        title: "Traslados aeropuerto y crucero",
+        description: "Recogida MBJ, puerto de Falmouth y cotizaciones de transporte entre resorts.",
+        cta: "Reservar traslado",
+      },
+      {
+        href: "/resorts",
+        title: "Zonas de recogida en resorts",
+        description: "Hyatt Rose Hall, RIU, Grand Palladium, Sandals Ochi — excursiones desde tu hotel.",
+        cta: "Encuentra tu zona",
+      },
+      {
+        href: "/nightlife",
+        title: "Paquetes de vida nocturna",
+        description: "Noches en el Hip Strip con transporte ida y vuelta desde tu hotel.",
+        cta: "Planifica tu noche",
+      },
+      {
+        href: "/locations",
+        title: "Guías por zona",
+        description: "MoBay, Falmouth y Ocho Rios — excursiones y traslados por región.",
+        cta: "Ver zonas",
+      },
+      {
+        href: "/blog",
+        title: "Guías y consejos de viaje",
+        description: "Artículos sobre traslados al aeropuerto, puertos de crucero, resorts y combos.",
+        cta: "Leer el blog",
+      },
+    ],
+  },
+};

@@ -358,9 +358,9 @@ export const uiEn: UiMessages = {
       },
       {
         href: "/locations",
-        title: "Guides par zone",
-        description: "MoBay, Falmouth et Ocho Rios — excursions et transferts par région.",
-        cta: "Voir les zones",
+        title: "Guides by Area",
+        description: "MoBay, Falmouth, and Ocho Rios — tours and transfers by region.",
+        cta: "View areas",
       },
       {
         href: "/blog",
