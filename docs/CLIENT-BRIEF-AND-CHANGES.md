@@ -2,8 +2,8 @@
 
 **Project:** Mobay Excursions website (package name: `hills-ocean-tours-jamaica`)  
 **Stack:** Next.js 16, React 19, TypeScript, Tailwind CSS 4  
-**Document date:** August 1, 2026  
-**Purpose:** Record competitor research, client decisions, and all code changes made during the August 2026 planning session.
+**Document date:** August 1–2, 2026  
+**Purpose:** Record competitor research, client decisions, and all code changes during the August 2026 planning and content sessions.
 
 ---
 
@@ -22,6 +22,8 @@
 11. [Pending Client Deliverables](#11-pending-client-deliverables)
 12. [Local Development](#12-local-development)
 13. [Future Recommendations](#13-future-recommendations)
+14. [Suggestions A–G Implementation (August 2026)](#14-suggestions-ag-implementation-august-2026)
+15. [August 2, 2026 — Contact, Instagram & Marketing Expansion](#15-august-2-2026--contact-instagram--marketing-expansion)
 
 ---
 
@@ -141,51 +143,52 @@ Luxury / non-luxury tiers     →    One brand, one fleet
 
 ## 5. Homepage Architecture (After Changes)
 
-### Section Order (New)
+### Section Order (Current — August 2, 2026)
 
 | Order | Section | Anchor | Rationale |
 |-------|---------|--------|-----------|
 | — | Promo Banner | — | Subtle offers (disabled by default) |
-| — | Header | — | Nav + “Book Tour” CTA |
+| — | Header | — | Nav + phone + WhatsApp |
 | 1 | Hero | — | Primary: Browse Tours; Secondary: Transfers |
 | 2 | Trust Bar | — | Operational trust (not fake stats) |
-| 3 | Featured Tours | `#featured` | Priority #1 — book a tour |
-| 4 | Full Tour Grid | `#tours` | Visual catalog of all experiences |
-| 5 | Tour Catalog | `#catalog` | Filterable list (Single/Combo + categories) |
-| 6 | Transfer Quote | `#transfers` | Priority #2 — airport/cruise quotes |
-| 7 | Value Props | — | Local specialist messaging |
-| 8 | Services | — | Category overview cards |
-| 9 | Transport Policy | `#pickup` | Pickup fees and resort list |
-| 10 | How It Works | — | 50% deposit + 7-day cancel |
-| 11 | Service Area Map | `#service-area` | MoBay/Ochi/Falmouth + OSM map |
-| 12 | Nightlife | `#nightlife` | Secondary content |
-| 13 | Testimonials | `#reviews` | Awaiting real client reviews |
-| 14 | FAQ | — | Booking, deposits, locations |
-| 15 | Contact | `#contact` | Form + WhatsApp + phone |
+| 3 | Featured Tours | `#featured` | Clear Kayak + Jet Car with full pricing |
+| 4 | Drone Showcase | `#drone` | Instagram differentiator — aerial photo/video deliverables |
+| 5 | Tour Catalog | `#tours` | Filterable catalog (Single/Combo + 7 categories) |
+| 6 | Transfer Quote | `#transfers` | Airport/cruise transfer form → WhatsApp |
+| 7 | Resort Pickup | `#resorts` | Zone cards linking to resort landing pages |
+| 8 | How It Works | `#how-it-works` | 50% deposit + 7-day cancel |
+| 9 | Value Props | — | Local specialist messaging |
+| 10 | Services | `#services` | 5 category overview cards |
+| 11 | Transport Policy | `#pickup` | Pickup fees and out-of-area resort list |
+| 12 | Service Area Map | `#service-area` | MoBay/Ochi/Falmouth + OSM map + link to resort zones |
+| 13 | Nightlife | `#nightlife` | Packages, venues, party resorts — WhatsApp CTAs |
+| 14 | Testimonials | `#reviews` | Awaiting real client reviews |
+| 15 | FAQ | `#faq` | Booking, deposits, nightlife, resort pickup |
+| 16 | Contact | `#contact` | Form + WhatsApp + phone + email |
 | — | Mobile CTA | — | WhatsApp (largest) → Book Tour → Call |
 
-### Section Order (Before Changes)
+### Section Order (August 1, 2026 — Before Marketing Expansion)
 
 ```
-Hero → TrustBar → ValueProps → FeaturedTours → Services → TourCatalog →
-Excursions → TransportPolicy → Nightlife → HowItWorks → Testimonials →
-FAQ → Contact
+Hero → TrustBar → FeaturedTours → TourCatalog → TransferQuote → HowItWorks →
+ValueProps → Services → TransportPolicy → ServiceAreaMap → Nightlife →
+Testimonials → FAQ → Contact
 ```
 
-**Key reorder:** Tours moved above value props/services; Transfer Quote inserted after catalog; Service Area Map added before Nightlife.
+**August 2 additions:** `DroneShowcase` after Featured; `ResortPickup` after Transfer Quote; Nightlife section fully redesigned; nav updated with Resorts + Nightlife.
 
-### Navigation (Updated)
+### Navigation (Current)
 
 | Label | Href |
 |-------|------|
 | Tours | `/#tours` |
+| Resorts | `/#resorts` |
 | Transfers | `/#transfers` |
-| Featured | `/#featured` |
-| Pickup | `/#pickup` |
-| Reviews | `/#reviews` |
+| Nightlife | `/#nightlife` |
+| Locations | `/locations/montego-bay` |
 | Contact | `/#contact` |
 
-**Removed from nav:** Nightlife (section still on page, lower priority)
+**Removed from nav (still on page):** Featured, Pickup, Reviews — accessible via section scroll or footer links.
 
 ---
 
@@ -430,9 +433,9 @@ Round trip: {roundTrip}
 
 | Item | Config Location | Status |
 |------|-----------------|--------|
-| Real phone number | `business.phone`, `phoneDisplay` | Placeholder `(876) 555-0198` |
-| Real WhatsApp number | `business.whatsapp` | Placeholder |
-| Real email | `business.email` | Placeholder |
+| Real phone number | `business.phone`, `phoneDisplay` | **Done** — `+1 (876) 571-2157` |
+| Real WhatsApp number | `business.whatsapp` | **Done** — `18765712157` |
+| Real email | `business.email`, `zelle`, `leadNotificationEmail` | **Done** — `hillsoceantoursja@gmail.com` |
 | JTB license number | `business.licenseNumber` | `JTB-TO-[TBD]` |
 | Google rating & review count | `business.googleRating`, `reviewCount` | Hidden until `reviewCount > 0` |
 | CashApp / Zelle handles | `business.cashapp`, `zelle` | Placeholder |
@@ -441,7 +444,7 @@ Round trip: {roundTrip}
 | Promo banner content | `promoBanner` | Disabled — enable when ready |
 | Web3Forms key | `communications.web3formsAccessKey` | Empty |
 | Tawk live chat IDs | `communications.tawkPropertyId`, `tawkWidgetId` | Empty |
-| Social media URLs | `social.*` | Generic placeholders |
+| Social media URLs | `social.*` | **Instagram done** — [instagram.com/hillsoceansja](https://www.instagram.com/hillsoceansja/); Facebook/TripAdvisor still placeholders |
 | Production domain | `seo.siteUrl` | `hillsoceantoursjamaica.com` |
 | Combo/yacht pricing | `excursions[].priceFrom` | “Get a Quote” for most |
 | Additional cancellation rules | `faqs`, `howItWorks` | Client to update later |
@@ -475,11 +478,9 @@ Production build verified successfully with `npm run build`.
 ## 13. Future Recommendations
 
 ### Content / SEO (When Client Is Ready)
-- High-intent blog posts, e.g.:
-  - “Montego Bay Airport Transfer Guide (MBJ)”
-  - “Best Combo Tours from Royalton Blue Waters”
-  - “Falmouth Cruise Port Excursions”
-- Replace Unsplash images with client photography
+- ~~High-intent blog posts (MBJ transfer, Falmouth cruise, combo tours)~~ — **Done (Aug 1)**
+- ~~Resort + nightlife SEO blogs~~ — **Done (Aug 2):** nightlife guide, Rose Hall resorts, Grand Palladium
+- Replace Unsplash images with client photography / Instagram reel stills
 - Add real Google review snippets to testimonials
 
 ### Product (Phase 2 — Not Implemented)
@@ -538,6 +539,142 @@ All 16 client answers, 50% deposit / 7-day cancel policy, per-tour Clear Kayak &
 | 6 | Started local dev server at `http://localhost:3000` |
 | 7 | Documented all decisions and changes in this file |
 | 8 | Implemented suggestions A–G; removed redundant Excursions; added location pages + SEO blogs |
+| 9 | Updated real contact info (phone, WhatsApp, email); wired Instagram URL + JSON-LD `sameAs` |
+| 10 | Expanded tour catalog, nightlife, resort zone pages, drone showcase; documented in §15 |
+
+---
+
+## 15. August 2, 2026 — Contact, Instagram & Marketing Expansion
+
+### 15.1 Real Contact Information
+
+Updated in `src/config/site-config.ts` (single source of truth for all site contact):
+
+| Field | Value |
+|-------|-------|
+| `business.phone` | `+1-876-571-2157` |
+| `business.phoneDisplay` | `+1 (876) 571-2157` |
+| `business.whatsapp` | `18765712157` (digits for `wa.me` links) |
+| `business.email` | `hillsoceantoursja@gmail.com` |
+| `business.zelle` | `hillsoceantoursja@gmail.com` |
+| `communications.leadNotificationEmail` | `hillsoceantoursja@gmail.com` |
+
+All phone links, WhatsApp deep links, footer, header, contact section, and form notifications use these values.
+
+### 15.2 Instagram Integration
+
+| Change | File |
+|--------|------|
+| Footer + social link | `siteConfig.social.instagram` → `https://www.instagram.com/hillsoceansja/` |
+| Structured data | `src/components/seo/JsonLd.tsx` — `sameAs: [instagram URL]` |
+| Marketing research doc | `docs/INSTAGRAM-MARKETING-RESEARCH.md` |
+
+### 15.3 Tour Catalog Expansion (12 New Excursions)
+
+Sourced from [@hillsoceansja](https://www.instagram.com/hillsoceansja/) recurring post copy. All are quote-only unless noted.
+
+| Slug | Name | Category |
+|------|------|----------|
+| `ricks-cafe` | Rick's Café Sunset | day-trips |
+| `konoko-falls` | Konoko Falls | day-trips |
+| `ys-falls` | YS Falls | day-trips |
+| `seven-mile-beach` | 7 Mile Beach Day Trip | day-trips |
+| `nine-mile-bob-marley` | 9 Mile Bob Marley Tour | culture |
+| `rose-hall-great-house` | Rose Hall Great House | culture |
+| `floyds-pelican-bar` | Floyd's Pelican Bar | water |
+| `booby-cay-lobster-lunch` | Booby Cay Private Boat & Lobster Lunch | water |
+| `swimming-with-dolphins` | Swimming with Dolphins | water |
+| `ziplining` | Ziplining Adventure | adventure |
+| `romantic-beach-dinner` | Romantic Beach Dinner | dining |
+| `drone-aerial-package` | Drone Photo & Video Package | water |
+
+**New filter categories:** `culture` (Culture & Heritage), `dining` (Romance & Dining).
+
+**Services block:** Expanded from 4 to 5 cards — added Culture & Day Trips, Nightlife & Romance; reordered Private Yacht last.
+
+### 15.4 Nightlife Section Redesign
+
+**File:** `src/components/sections/Nightlife.tsx`
+
+| Feature | Detail |
+|---------|--------|
+| Layout | Dark (`bg-jamaica-black`) with pattern overlay |
+| Packages | 3 cards — Hip Strip Night Out, Lounge 2727 VIP, Resort Party Hop |
+| Venues | 4 image cards — Lounge 2727, Margaritaville, Pier One, Taboo |
+| Party resorts | Breathless, RIU MoBay, Grand Palladium strip |
+| CTAs | WhatsApp on every package + bottom CTA |
+| Disclaimer | Adults 18+ for nightclubs; venue details may change |
+
+Config: `siteConfig.nightlife` — `packages[]`, enhanced `venues[]` (image, vibe, highlight), `partyResorts[]`, `ctaNote`.
+
+### 15.5 Drone Showcase Section
+
+**File:** `src/components/sections/DroneShowcase.tsx`  
+**Anchor:** `#drone`  
+**Config:** `siteConfig.droneShowcase`
+
+Highlights Instagram positioning (“Drone shoots • Tours • Jamaica”): deliverables list (5 edited photos, 4K video, unedited gallery, add-on tours), hero image from clear kayak shoot, CTA to `/tours/clear-kayak-photoshoot`.
+
+### 15.6 Resort Pickup Zones & Landing Pages
+
+**Homepage section:** `src/components/sections/ResortPickup.tsx` — `#resorts`  
+**Content:** `src/content/resort-guides.ts`  
+**Routes:** `src/app/[locale]/resorts/[slug]/page.tsx`
+
+| Slug | Zone | Key resorts |
+|------|------|---------------|
+| `rose-hall-corridor` | Rose Hall Corridor | Hyatt Zilara/Ziva, Hilton, Iberostar, Secrets |
+| `montego-bay-central` | MoBay Central & Hip Strip | RIU, Sandals, Breathless, Hip Strip |
+| `runaway-bay-out-of-area` | Runaway Bay & Out-of-Area | Grand Palladium, Royalton, Excellence |
+| `ocho-rios-resorts` | Ocho Rios Resorts | Sandals Ochi, Moon Palace, RIU Ochi |
+
+Each landing page includes: pickup policy, drive times, highlights, recommended tours, full resort list, zone FAQs, WhatsApp CTA, links to other zones.
+
+**Static pages generated:** 4 zones × 4 locales = 16 resort pages (part of 78 total static routes).
+
+### 15.7 SEO Blog Posts Added
+
+| Slug | Title |
+|------|-------|
+| `montego-bay-nightlife-guide` | Montego Bay Nightlife Guide |
+| `tours-from-rose-hall-resorts` | Tours from Rose Hall Resorts |
+| `things-to-do-grand-palladium-jamaica` | Things to Do Near Grand Palladium |
+
+Location guides (`tours-and-blog.ts`) updated with additional resorts and tour links for MoBay and Ocho Rios.
+
+### 15.8 Files Created (August 2)
+
+| File | Purpose |
+|------|---------|
+| `src/components/sections/DroneShowcase.tsx` | Drone/aerial media showcase |
+| `src/components/sections/ResortPickup.tsx` | Resort zone cards on homepage |
+| `src/content/resort-guides.ts` | Full resort zone content |
+| `src/app/[locale]/resorts/[slug]/page.tsx` | Resort landing pages |
+| `docs/INSTAGRAM-MARKETING-RESEARCH.md` | Instagram content audit + marketing copy |
+
+### 15.9 Files Modified (August 2)
+
+| File | Summary |
+|------|---------|
+| `src/config/site-config.ts` | Contact info, 12 tours, nightlife/resort/drone config, nav, FAQs, SEO keywords, out-of-area resorts |
+| `src/app/[locale]/page.tsx` | Added DroneShowcase, ResortPickup; reordered sections |
+| `src/components/sections/Nightlife.tsx` | Full redesign with packages, images, CTAs |
+| `src/components/sections/ServiceAreaMap.tsx` | CTA button → `/#resorts` |
+| `src/components/sections/Services.tsx` | Grid supports 5 service cards |
+| `src/components/seo/JsonLd.tsx` | `sameAs` Instagram URL |
+| `src/content/tours-and-blog.ts` | Expanded location guides + 3 blog posts |
+| `src/i18n/types.ts` | ResortGuide, NightlifePackage, DroneShowcase, ResortZone types |
+| `src/i18n/index.ts` | Registered `resortGuides`, `getResortGuide()` |
+| `src/i18n/ui/en.ts` | Nightlife, resort, drone section strings; expanded contact form options |
+| `src/i18n/ui/fr.ts` | French UI strings for new sections |
+
+### 15.10 Build Verification
+
+```bash
+npm run build
+# ✓ 78 static pages (includes 16 resort pages)
+# Routes: /[locale]/resorts/[slug] added
+```
 
 ---
 

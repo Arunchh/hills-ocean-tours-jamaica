@@ -12,6 +12,8 @@ import { ValueProps } from "@/components/sections/ValueProps";
 import { Services } from "@/components/sections/Services";
 import { TransportPolicy } from "@/components/sections/TransportPolicy";
 import { ServiceAreaMap } from "@/components/sections/ServiceAreaMap";
+import { DroneShowcase } from "@/components/sections/DroneShowcase";
+import { ResortPickup } from "@/components/sections/ResortPickup";
 import { Nightlife } from "@/components/sections/Nightlife";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { FAQ } from "@/components/sections/FAQ";
@@ -26,8 +28,10 @@ export default function Home() {
         <Hero />
         <TrustBar />
         <FeaturedTours />
+        <DroneShowcase />
         <TourCatalog />
         <TransferQuote />
+        <ResortPickup />
         <HowItWorks />
         <ValueProps />
         <Services />

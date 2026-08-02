@@ -53,6 +53,13 @@ export const uiFr: UiMessages = {
     credentials: "Certifications",
     viewLocationGuide: "Voir le guide de la zone",
     allLocations: "Toutes les zones desservies",
+    viewResortGuide: "Voir le guide resort",
+    allResortZones: "Toutes les zones resort",
+    bookNightlifePackage: "Réserver un forfait nightlife",
+    exploreDronePackage: "Découvrir le kayak transparent",
+    adultsOnly: "Adultes 18+",
+    includes: "Inclus",
+    fromYourResort: "Excursions depuis votre resort",
   },
   sections: {
     services: {
@@ -132,11 +139,39 @@ export const uiFr: UiMessages = {
       title: "Excursions par région",
       description: "Parcourez les expériences et transferts pour chaque zone que nous desservons.",
     },
+    nightlife: {
+      eyebrow: "Vie nocturne",
+      title: "Montego Bay la nuit",
+      description: "Forfaits nightlife avec transport aller-retour depuis votre hôtel.",
+      packagesTitle: "Forfaits nightlife",
+      venuesTitle: "Où nous vous emmenons",
+      partyResortsTitle: "Clients des resorts festifs bienvenus",
+    },
+    resortPickup: {
+      eyebrow: "Prise en charge resort",
+      title: "Nous venons vous chercher",
+      description: "Parcourez les excursions et politiques de transport pour votre zone resort.",
+    },
+    droneShowcase: {
+      eyebrow: "Drone et média",
+      title: "Contenu aérien sur votre excursion",
+      description: "Forfaits photo et vidéo drone professionnels.",
+      deliverablesTitle: "Ce que vous recevez",
+    },
   },
   locations: {
     popularTours: "Excursions et transferts populaires",
     exploreGuide: "Explorer d'autres zones",
     backToLocations: "Retour aux zones desservies",
+  },
+  resorts: {
+    popularTours: "Excursions recommandées depuis cette zone",
+    resortsWeServe: "Resorts où nous effectuons la prise en charge",
+    pickupPolicy: "Politique de prise en charge",
+    transportNote: "Temps de trajet",
+    exploreZones: "Explorer d'autres zones resort",
+    backToResorts: "Toutes les zones resort",
+    faqTitle: "FAQ de la zone",
   },
   tourKind: {
     all: "Toutes les excursions",

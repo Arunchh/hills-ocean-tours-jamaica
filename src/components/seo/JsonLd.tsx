@@ -30,6 +30,7 @@ export function JsonLd({ locale }: { locale: Locale }) {
       },
     })),
     priceRange: "$$",
+    sameAs: [siteConfig.social.instagram],
   };
 
   if (siteConfig.business.reviewCount > 0) {

@@ -4,12 +4,12 @@ export const siteConfig = {
     tagline: "Your Trusted Local Montego Bay Tour Operator",
     description:
       "Local Montego Bay specialist for tours, combo packages, private yacht charters, and airport or cruise port transfers. Montego Bay, Ocho Rios & Falmouth — book via WhatsApp.",
-    phone: "+1-876-555-0198",
-    phoneDisplay: "(876) 555-0198",
-    whatsapp: "18765550198",
-    email: "bookings@hillsoceantoursjamaica.com",
+    phone: "+1-876-571-2157",
+    phoneDisplay: "+1 (876) 571-2157",
+    whatsapp: "18765712157",
+    email: "hillsoceantoursja@gmail.com",
     cashapp: "$HillsOceanTours",
-    zelle: "bookings@hillsoceantoursjamaica.com",
+    zelle: "hillsoceantoursja@gmail.com",
     address: "Montego Bay, St. James, Jamaica",
     licenseNumber: "JTB-TO-[TBD]",
     yearsInBusiness: 8,
@@ -37,20 +37,24 @@ export const siteConfig = {
       "Dunn's River Falls tour from Montego Bay",
       "Montego Bay excursion driver",
       "Ocho Rios day trip from Montego Bay",
-      "Montego Bay local tour operator",
+      "Montego Bay nightlife packages",
+      "tours from Hyatt Zilara Rose Hall",
+      "Rose Hall excursions pickup",
+      "9 Mile Bob Marley tour Montego Bay",
+      "Rick's Cafe sunset tour Jamaica",
     ],
   },
 
   hero: {
     headline: "Your Trusted Local Operator for Montego Bay Tours & Transfers",
     subheadline:
-      "Single tours, combo packages, and private yacht charters across Montego Bay and Ocho Rios. Airport and cruise port transfers available. Message us on WhatsApp to check availability.",
+      "Single tours, combo packages, drone photoshoots, nightlife packages, and private yacht charters across Montego Bay and Ocho Rios. Airport and cruise port transfers available. Message us on WhatsApp to check availability.",
     primaryCta: "Browse Tours",
     secondaryCta: "Airport & Cruise Transfer",
     image:
       "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1920&q=80",
     imageAlt: "Turquoise Caribbean water in Montego Bay, Jamaica",
-    badges: ["Local MoBay Operator", "USD Pricing", "Hotel Pickup", "WhatsApp Booking"],
+    badges: ["Local MoBay Operator", "Drone Photo & Video", "Hotel Pickup", "WhatsApp Booking"],
   },
 
   trustPoints: [
@@ -136,13 +140,18 @@ export const siteConfig = {
       "Ocean Eden Bay",
       "Ocean Coral Spring",
       "Royalton Blue Waters",
+      "Royalton White Sands",
       "Royalton Hideaway",
       "Riu Aquarelle",
+      "Riu Palace Jamaica",
       "Grand Palladium Lady Hamilton",
       "Grand Palladium Jamaica",
       "Excellence Oyster Bay",
       "Princess Grand Jamaica",
       "Princess Senses the Mangrove",
+      "Hyatt Zilara Rose Hall",
+      "Hilton Rose Hall",
+      "Moon Palace Jamaica",
     ],
   },
 
@@ -150,22 +159,29 @@ export const siteConfig = {
     {
       title: "Water & Beach",
       description:
-        "Clear kayak photoshoots, jet skis, jet cars, parasailing, catamaran cruises, and bamboo rafting.",
+        "Clear kayak drone photoshoots, jet skis, jet cars, parasailing, catamaran cruises, and bamboo rafting.",
       icon: "map" as const,
       priceFrom: 140,
     },
     {
       title: "Adventure & Land",
       description:
-        "ATV trails, farm tours, and horseback riding — action-packed experiences around Montego Bay.",
+        "ATV trails, ziplining, farm tours, and horseback riding — action-packed experiences around Montego Bay.",
       icon: "users" as const,
       priceFrom: 0,
     },
     {
-      title: "Combo Packages",
+      title: "Culture & Day Trips",
       description:
-        "One price, multiple activities — stack ATV, zipline, waterfalls, and more into a single day.",
+        "Dunn's River, Blue Hole, Rose Hall, 9 Mile Bob Marley, Rick's Café, and Negril day trips from MoBay.",
       icon: "plane" as const,
+      priceFrom: 0,
+    },
+    {
+      title: "Nightlife & Romance",
+      description:
+        "MoBay nightlife transport, Lounge 2727, Margaritaville, and candlelight beach dinners — we plan your night.",
+      icon: "hotel" as const,
       priceFrom: 0,
     },
     {
@@ -191,7 +207,17 @@ export const siteConfig = {
     {
       id: "day-trips",
       label: "Day Trips",
-      description: "Ocho Rios waterfalls and north coast highlights",
+      description: "Ocho Rios waterfalls, Negril sunsets, and north coast highlights",
+    },
+    {
+      id: "culture",
+      label: "Culture & Heritage",
+      description: "Bob Marley, Rose Hall, and Jamaican history experiences",
+    },
+    {
+      id: "dining",
+      label: "Romance & Dining",
+      description: "Beach dinners and special-occasion packages",
     },
     {
       id: "combo",
@@ -529,37 +555,359 @@ export const siteConfig = {
       popular: false,
       hasDetailPage: false,
     },
+    {
+      slug: "swimming-with-dolphins",
+      name: "Swimming with Dolphins",
+      category: "water",
+      tourKind: "single" as const,
+      location: "Ocho Rios",
+      duration: "Half day",
+      priceFrom: 0,
+      priceType: "quote" as const,
+      highlights: ["Dolphin encounter", "Family friendly", "Transport from MoBay"],
+      image:
+        "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80",
+      popular: false,
+      hasDetailPage: false,
+    },
+    {
+      slug: "ziplining",
+      name: "Ziplining Adventure",
+      category: "adventure",
+      tourKind: "single" as const,
+      location: "Montego Bay / Ocho Rios",
+      duration: "2–3 hours",
+      priceFrom: 0,
+      priceType: "quote" as const,
+      highlights: ["Canopy lines", "Rainforest views", "All skill levels"],
+      image:
+        "https://images.unsplash.com/photo-1519046904212-407b7196a9d8?auto=format&fit=crop&w=800&q=80",
+      popular: false,
+      hasDetailPage: false,
+    },
+    {
+      slug: "konoko-falls",
+      name: "Konoko Falls",
+      category: "day-trips",
+      tourKind: "single" as const,
+      location: "Ocho Rios",
+      duration: "Half day",
+      priceFrom: 0,
+      priceType: "quote" as const,
+      highlights: ["Botanical gardens", "Waterfall pools", "Less crowded than Dunn's River"],
+      image:
+        "https://images.unsplash.com/photo-1500375592092-40eb6668c21a?auto=format&fit=crop&w=800&q=80",
+      popular: false,
+      hasDetailPage: false,
+    },
+    {
+      slug: "ys-falls",
+      name: "YS Falls",
+      category: "day-trips",
+      tourKind: "single" as const,
+      location: "South coast (from MoBay)",
+      duration: "Full day",
+      priceFrom: 0,
+      priceType: "quote" as const,
+      highlights: ["Seven-tier waterfall", "Natural pools", "Scenic south coast drive"],
+      image:
+        "https://images.unsplash.com/photo-1544551763-77ef2d0cfcb0?auto=format&fit=crop&w=800&q=80",
+      popular: false,
+      hasDetailPage: false,
+    },
+    {
+      slug: "ricks-cafe",
+      name: "Rick's Café Sunset",
+      category: "day-trips",
+      tourKind: "single" as const,
+      location: "Negril",
+      duration: "Full day",
+      priceFrom: 0,
+      priceType: "quote" as const,
+      highlights: ["Cliff diving show", "Legendary sunset", "7 Mile Beach stop"],
+      image:
+        "https://images.unsplash.com/photo-1505118389757-91dd49627c00?auto=format&fit=crop&w=800&q=80",
+      popular: true,
+      hasDetailPage: false,
+    },
+    {
+      slug: "seven-mile-beach",
+      name: "7 Mile Beach Day Trip",
+      category: "day-trips",
+      tourKind: "single" as const,
+      location: "Negril",
+      duration: "Full day",
+      priceFrom: 0,
+      priceType: "quote" as const,
+      highlights: ["White sand beach", "Swimming & lunch", "Transport from MoBay"],
+      image:
+        "https://images.unsplash.com/photo-1519046904212-407b7196a9d8?auto=format&fit=crop&w=800&q=80",
+      popular: false,
+      hasDetailPage: false,
+    },
+    {
+      slug: "floyds-pelican-bar",
+      name: "Floyd's Pelican Bar",
+      category: "water",
+      tourKind: "single" as const,
+      location: "Negril (offshore)",
+      duration: "Half day",
+      priceFrom: 0,
+      priceType: "quote" as const,
+      highlights: ["Boat ride to bar on stilts", "Cold drinks in the sea", "Iconic Jamaica photo op"],
+      image:
+        "https://images.unsplash.com/photo-1567894340315-735d7c361db0?auto=format&fit=crop&w=800&q=80",
+      popular: true,
+      hasDetailPage: false,
+    },
+    {
+      slug: "booby-cay-lobster-lunch",
+      name: "Booby Cay Private Boat & Lobster Lunch",
+      category: "water",
+      tourKind: "single" as const,
+      location: "Negril",
+      duration: "Half day",
+      priceFrom: 0,
+      priceType: "quote" as const,
+      highlights: ["Private boat charter", "Fresh lobster lunch", "Snorkeling stop"],
+      image:
+        "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80",
+      popular: false,
+      hasDetailPage: false,
+    },
+    {
+      slug: "nine-mile-bob-marley",
+      name: "9 Mile Bob Marley Tour",
+      category: "culture",
+      tourKind: "single" as const,
+      location: "St. Ann (from MoBay)",
+      duration: "Half day",
+      priceFrom: 0,
+      priceType: "quote" as const,
+      highlights: ["Birthplace & mausoleum", "Reggae history", "Guided cultural tour"],
+      image:
+        "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80",
+      popular: true,
+      hasDetailPage: false,
+    },
+    {
+      slug: "rose-hall-great-house",
+      name: "Rose Hall Great House",
+      category: "culture",
+      tourKind: "single" as const,
+      location: "Rose Hall, Montego Bay",
+      duration: "3–4 hours",
+      priceFrom: 0,
+      priceType: "quote" as const,
+      highlights: ["Historic plantation tour", "Rose Hall corridor pickup", "Evening tour option"],
+      image:
+        "https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?auto=format&fit=crop&w=800&q=80",
+      popular: true,
+      hasDetailPage: false,
+    },
+    {
+      slug: "romantic-beach-dinner",
+      name: "Romantic Beach Dinner",
+      category: "dining",
+      tourKind: "single" as const,
+      location: "Montego Bay",
+      duration: "3–4 hours",
+      priceFrom: 0,
+      priceType: "quote" as const,
+      highlights: ["Private beach setup", "Candlelight dining", "Couples & anniversaries"],
+      image:
+        "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=800&q=80",
+      popular: true,
+      hasDetailPage: false,
+    },
+    {
+      slug: "drone-aerial-package",
+      name: "Drone Photo & Video Package",
+      category: "water",
+      tourKind: "single" as const,
+      location: "Montego Bay",
+      duration: "2–3 hours",
+      priceFrom: 0,
+      priceType: "quote" as const,
+      highlights: ["Aerial drone coverage", "Edited photos + 4K video", "Add-on to any tour"],
+      image: "/images/tours/clear-kayak/01-hero-drone.jpeg",
+      popular: true,
+      hasDetailPage: false,
+    },
   ],
 
   nightlife: {
     eyebrow: "Nightlife — Montego Bay",
-    title: "Where to Go After Your Tour",
+    title: "Your Day Ends — Your Night Begins",
     description:
-      "Local picks for Montego Bay nightlife. Hours, cover charges, and dress codes may vary — ask your driver for tonight's recommendations.",
+      "Staying at a lively Montego Bay resort? We arrange nightlife transport and packages so you don't figure out timing or taxis. Message us with your hotel and date — we'll build your night.",
     disclaimer:
-      "Venue details may change. These are recommendations only — not packaged bookings unless arranged separately.",
+      "Venue hours, cover charges, and dress codes change. Adults 18+ for nightclub venues. Nightlife transport is arranged separately — message us for a custom quote.",
+    packages: [
+      {
+        name: "Hip Strip Night Out",
+        description:
+          "Round-trip transport from your hotel to Margaritaville and Pier One — dinner, drinks, and waterfront vibes on the Hip Strip.",
+        includes: ["Hotel pickup & return", "Margaritaville stop", "Pier One waterfront"],
+        image:
+          "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=800&q=80",
+        badge: "Most Popular",
+      },
+      {
+        name: "Lounge 2727 VIP Evening",
+        description:
+          "Upscale lounge experience in Montego Bay — we handle transport there and back so you can enjoy the night worry-free.",
+        includes: ["Private round-trip transport", "Lounge 2727 drop-off", "Flexible return time"],
+        image:
+          "https://images.unsplash.com/photo-1566737238500-e93595362873?auto=format&fit=crop&w=800&q=80",
+        badge: "Upscale",
+      },
+      {
+        name: "Resort Party Hop",
+        description:
+          "Visiting Breathless, RIU, or Grand Palladium? We connect your resort's nightlife with off-property venues in one seamless evening.",
+        includes: ["Resort pickup", "Multi-venue routing", "Timed return"],
+        image:
+          "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=800&q=80",
+        badge: "Resort Guests",
+      },
+    ],
     venues: [
       {
         name: "Lounge 2727",
-        type: "Lounge",
-        description: "Upscale lounge vibes in Montego Bay.",
+        type: "Upscale Lounge",
+        description:
+          "Montego Bay's go-to for upscale lounge vibes — live DJs, bottle service, and a dressed-up crowd.",
+        image:
+          "https://images.unsplash.com/photo-1566737238500-e93595362873?auto=format&fit=crop&w=600&q=80",
+        vibe: "Upscale · Live DJs",
+        highlight: "Best for couples & groups who want a polished night out",
       },
       {
         name: "Margaritaville",
-        type: "Restaurant / Bar",
-        description: "Iconic beach bar with food, drinks, and entertainment on the Hip Strip.",
-      },
-      {
-        name: "Taboo",
-        type: "Nightclub",
-        description: "Montego Bay nightlife spot — ask your driver for current details.",
+        type: "Beach Bar & Restaurant",
+        description:
+          "Iconic Hip Strip beach bar — food, frozen drinks, water trampolines, and nightly entertainment steps from the sand.",
+        image:
+          "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=600&q=80",
+        vibe: "Casual · Beachfront",
+        highlight: "Perfect first night in Jamaica — fun without planning",
       },
       {
         name: "Pier One",
         type: "Waterfront Venue",
-        description: "Waterfront dining and nightlife — also home to our jet car experience.",
+        description:
+          "Waterfront dining and nightlife on the harbour — also home to our jet car experience by day.",
+        image:
+          "https://images.unsplash.com/photo-1559827260-dc66d52bef19?auto=format&fit=crop&w=600&q=80",
+        vibe: "Waterfront · Dining + Nightlife",
+        highlight: "Combine a jet car session with an evening harbour dinner",
+      },
+      {
+        name: "Taboo",
+        type: "Nightclub",
+        description:
+          "Montego Bay nightclub for late-night dancing — ask your driver for current hours and cover.",
+        image:
+          "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=600&q=80",
+        vibe: "Late Night · 18+",
+        highlight: "Adults-only — ideal cap to a big night out",
       },
     ],
+    partyResorts: [
+      {
+        name: "Breathless Montego Bay",
+        description: "Adults-only resort with pool parties, live DJs, and themed events.",
+        vibe: "Adults · High Energy",
+      },
+      {
+        name: "RIU Montego Bay",
+        description: "Vibrant all-inclusive with nightly entertainment and themed parties.",
+        vibe: "All-Inclusive · Lively",
+      },
+      {
+        name: "Grand Palladium Jamaica",
+        description: "Multiple swim-up bars, beach bars, and nightly themed parties.",
+        vibe: "Family + Party · Dynamic",
+      },
+    ],
+    ctaNote: "Tell us your hotel, date, and group size — we'll quote nightlife transport and routing on WhatsApp.",
+  },
+
+  resortZones: {
+    eyebrow: "Hotel Pickup Zones",
+    title: "Tours from Your Resort — We Know Every Pickup Point",
+    description:
+      "Whether you're on the Hip Strip, Rose Hall corridor, or an out-of-area all-inclusive — we quote transport upfront and pick you up on time.",
+    zones: [
+      {
+        slug: "rose-hall-corridor",
+        name: "Rose Hall Corridor",
+        tagline: "Hyatt, Hilton, Iberostar & Secrets",
+        description:
+          "The Rose Hall strip is Jamaica's resort densest zone. We pick up daily for clear kayak shoots, Ocho Rios day trips, and Rose Hall Great House tours.",
+        image:
+          "https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?auto=format&fit=crop&w=800&q=80",
+        pickupNote: "Transport fee may apply — quoted before you book",
+        resortCount: 12,
+        featuredResorts: ["Hyatt Zilara Rose Hall", "Hyatt Ziva Rose Hall", "Hilton Rose Hall", "Secrets St. James"],
+        topTours: ["clear-kayak-photoshoot", "rose-hall-great-house", "dunns-river-falls"],
+      },
+      {
+        slug: "montego-bay-central",
+        name: "MoBay Central & Hip Strip",
+        tagline: "RIU, Sandals, Margaritaville area",
+        description:
+          "Closest to One Man Beach, Pier One jet cars, and Hip Strip nightlife. Many tours include free roundtrip pickup from central MoBay hotels.",
+        image:
+          "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80",
+        pickupNote: "Free pickup on select tours for Hip Strip & central MoBay",
+        resortCount: 10,
+        featuredResorts: ["RIU Montego Bay", "Sandals Montego Bay", "Holiday Inn Resort", "Breathless Montego Bay"],
+        topTours: ["clear-kayak-photoshoot", "jet-car-rental", "party-catamaran"],
+      },
+      {
+        slug: "runaway-bay-out-of-area",
+        name: "Runaway Bay & Out-of-Area",
+        tagline: "Grand Palladium, Royalton, Excellence",
+        description:
+          "Properties east and west of central MoBay — Grand Palladium, Royalton Blue Waters, Excellence Oyster Bay, and Ocean Eden Bay. Transport fee always quoted upfront.",
+        image:
+          "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=800&q=80",
+        pickupNote: "Out-of-area transport fee applies — confirmed on WhatsApp",
+        resortCount: 14,
+        featuredResorts: ["Grand Palladium Jamaica", "Royalton Blue Waters", "Excellence Oyster Bay", "Ocean Eden Bay"],
+        topTours: ["blue-hole", "dunns-river-falls", "atv-bamboo-rafting-combo"],
+      },
+      {
+        slug: "ocho-rios-resorts",
+        name: "Ocho Rios Resorts",
+        tagline: "RIU Ochi, Sandals Ochi, Moon Palace",
+        description:
+          "Staying in Ocho Rios? We run waterfall and adventure day trips locally, and connect MoBay guests for north coast combos.",
+        image:
+          "https://images.unsplash.com/photo-1544551763-77ef2d0cfcb0?auto=format&fit=crop&w=800&q=80",
+        pickupNote: "Local Ochi pickup for waterfall tours; MoBay transport for day trips",
+        resortCount: 8,
+        featuredResorts: ["Sandals Ochi", "Moon Palace Jamaica", "Couples Tower Isle", "RIU Ocho Rios"],
+        topTours: ["dunns-river-falls", "blue-hole", "konoko-falls"],
+      },
+    ],
+  },
+
+  droneShowcase: {
+    eyebrow: "Drone Shoots • Tours • Jamaica",
+    title: "Professional Drone Photo & Video on Your Tour",
+    description:
+      "Stand out from every other excursion — our clear kayak photoshoot and drone packages deliver edited photos and 4K video the same day. Screenshot your favorites and send via WhatsApp for editing.",
+    deliverables: [
+      { label: "5 Edited Photos", detail: "Professionally color-graded and delivered same day" },
+      { label: "1 Edited 4K Video", detail: "Cinematic aerial and water-level footage" },
+      { label: "30–50+ Unedited Shots", detail: "Via WeTransfer or Google Drive — pick your favorites" },
+      { label: "Add-On Any Tour", detail: "Drone coverage available on select experiences — ask on WhatsApp" },
+    ],
+    image: "/images/tours/clear-kayak/01-hero-drone.jpeg",
+    ctaTourSlug: "clear-kayak-photoshoot",
   },
 
   howItWorks: [
@@ -678,7 +1026,17 @@ export const siteConfig = {
     {
       question: "Can I book tours that don't have listed prices?",
       answer:
-        "Yes. ATV, Jet Ski, Blue Hole, Dunn's River, and other experiences are available — message us on WhatsApp for a custom quote based on your group size and hotel location.",
+        "Yes. ATV, Jet Ski, Blue Hole, Dunn's River, Rick's Café, 9 Mile Bob Marley, Rose Hall, nightlife transport, and other experiences are available — message us on WhatsApp for a custom quote based on your group size and hotel location.",
+    },
+    {
+      question: "Do you arrange Montego Bay nightlife transport?",
+      answer:
+        "Yes. We arrange round-trip transport to Lounge 2727, Margaritaville, Pier One, and other MoBay venues. Message us with your hotel, date, and group size for a quote — venue cover charges and entry are separate.",
+    },
+    {
+      question: "Do you pick up from Rose Hall and out-of-area resorts?",
+      answer:
+        "Yes. We serve Hyatt Zilara/Ziva, Hilton Rose Hall, Grand Palladium, Royalton Blue Waters, Excellence Oyster Bay, and many more. Transport fees for out-of-area properties are quoted upfront on WhatsApp before you pay your deposit.",
     },
   ],
 
@@ -688,24 +1046,23 @@ export const siteConfig = {
     formProvider: "web3forms" as const,
     web3formsAccessKey: "",
     formspreeFormId: "",
-    leadNotificationEmail: "bookings@hillsoceantoursjamaica.com",
+    leadNotificationEmail: "hillsoceantoursja@gmail.com",
     tawkPropertyId: "",
     tawkWidgetId: "",
   },
 
   social: {
     facebook: "https://facebook.com",
-    instagram: "https://instagram.com",
+    instagram: "https://www.instagram.com/hillsoceansja/",
     tripadvisor: "https://tripadvisor.com",
   },
 
   nav: [
     { label: "Tours", href: "/#tours" },
+    { label: "Resorts", href: "/#resorts" },
     { label: "Transfers", href: "/#transfers" },
+    { label: "Nightlife", href: "/#nightlife" },
     { label: "Locations", href: "/locations/montego-bay" },
-    { label: "Featured", href: "/#featured" },
-    { label: "Pickup", href: "/#pickup" },
-    { label: "Reviews", href: "/#reviews" },
     { label: "Contact", href: "/#contact" },
   ],
 } as const;

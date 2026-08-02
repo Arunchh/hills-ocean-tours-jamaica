@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { MapPin } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { Button } from "@/components/ui/Button";
 import { useI18n } from "@/i18n/LocaleProvider";
 import { localizeHref } from "@/i18n/paths";
 
@@ -53,6 +54,12 @@ export function ServiceAreaMap() {
               referrerPolicy="no-referrer-when-downgrade"
             />
           </div>
+        </div>
+
+        <div className="mt-10 text-center">
+          <Button href={localizeHref("/#resorts", locale)} variant="secondary">
+            {ui.common.allResortZones}
+          </Button>
         </div>
       </div>
     </section>

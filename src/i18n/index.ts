@@ -10,6 +10,10 @@ import {
   cityTourGuides as cityTourGuidesEn,
   getCityGuide as getCityGuideEn,
 } from "@/content/tours-and-blog";
+import {
+  resortGuides as resortGuidesEn,
+  getResortGuide as getResortGuideEn,
+} from "@/content/resort-guides";
 import { siteConfigEs } from "./content/site-config.es";
 import { siteConfigPt } from "./content/site-config.pt";
 import { siteConfigFr } from "./content/site-config.fr";
@@ -37,21 +41,25 @@ const contentByLocale: Record<Locale, LocaleContent> = {
   en: {
     siteConfig: siteConfigEn as unknown as LocaleContent["siteConfig"],
     cityTourGuides: cityTourGuidesEn,
+    resortGuides: resortGuidesEn,
     blogPosts: blogPostsEn,
   },
   es: {
     siteConfig: siteConfigEs,
     cityTourGuides: cityTourGuidesEs,
+    resortGuides: resortGuidesEn,
     blogPosts: blogPostsEs,
   },
   pt: {
     siteConfig: siteConfigPt,
     cityTourGuides: cityTourGuidesPt,
+    resortGuides: resortGuidesEn,
     blogPosts: blogPostsPt,
   },
   fr: {
     siteConfig: siteConfigFr,
     cityTourGuides: cityTourGuidesFr,
+    resortGuides: resortGuidesEn,
     blogPosts: blogPostsFr,
   },
 };
@@ -70,6 +78,10 @@ export function getBlogPost(locale: Locale, slug: string) {
 
 export function getCityGuide(slug: string) {
   return getCityGuideEn(slug);
+}
+
+export function getResortGuide(slug: string) {
+  return getResortGuideEn(slug);
 }
 
 export function formatUi(

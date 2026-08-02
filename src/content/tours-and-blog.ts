@@ -37,12 +37,17 @@ export const cityTourGuides: CityTourGuide[] = [
       "Grand Palladium Jamaica",
       "Excellence Oyster Bay",
       "Princess Grand Jamaica",
+      "Hyatt Zilara Rose Hall",
+      "RIU Montego Bay",
+      "Sandals Montego Bay",
+      "Breathless Montego Bay",
     ],
     highlights: [
       "Sangster Airport (MBJ) transfers",
       "Clear kayak drone photoshoots at One Man Beach",
       "Jet car rentals at Pier One",
       "Private yacht charters from MoBay harbour",
+      "MoBay nightlife packages — Lounge 2727, Margaritaville, Pier One",
     ],
     tours: [
       {
@@ -68,6 +73,22 @@ export const cityTourGuides: CityTourGuide[] = [
         priceFrom: 0,
         description: "Custom routes for couples, families, and groups.",
         excursionSlug: "private-yacht-charter",
+      },
+      {
+        name: "Rose Hall Great House",
+        type: "excursion",
+        duration: "3–4 hours",
+        priceFrom: 0,
+        description: "Historic plantation tour in the Rose Hall corridor.",
+        excursionSlug: "rose-hall-great-house",
+      },
+      {
+        name: "9 Mile Bob Marley Tour",
+        type: "excursion",
+        duration: "Half day",
+        priceFrom: 0,
+        description: "Visit Bob Marley's birthplace and mausoleum.",
+        excursionSlug: "nine-mile-bob-marley",
       },
       {
         name: "Airport Transfer (MBJ)",
@@ -130,10 +151,11 @@ export const cityTourGuides: CityTourGuide[] = [
       "https://images.unsplash.com/photo-1544551763-77ef2d0cfcb0?auto=format&fit=crop&w=1200&q=80",
     mapEmbedUrl:
       "https://www.openstreetmap.org/export/embed.html?bbox=-77.12%2C18.38%2C-77.02%2C18.44&layer=mapnik&marker=18.4074%2C-77.1031",
-    popularResorts: ["Sandals Ochi", "Moon Palace Jamaica", "Couples Tower Isle"],
+    popularResorts: ["Sandals Ochi", "Moon Palace Jamaica", "Couples Tower Isle", "RIU Ocho Rios", "Jewel Dunn's River"],
     highlights: [
       "Dunn's River Falls guided climbs",
       "Blue Hole swimming and cliff jumping",
+      "Konoko Falls botanical gardens",
       "ATV + zipline + waterfall combo packages",
       "Transport from Montego Bay resorts included on day trips",
     ],
@@ -153,6 +175,14 @@ export const cityTourGuides: CityTourGuide[] = [
         priceFrom: 0,
         description: "Hidden waterfalls and swimming holes in the hills.",
         excursionSlug: "blue-hole",
+      },
+      {
+        name: "Konoko Falls",
+        type: "excursion",
+        duration: "Half day",
+        priceFrom: 0,
+        description: "Botanical gardens and quieter waterfall pools.",
+        excursionSlug: "konoko-falls",
       },
       {
         name: "ATV, Zipline & Dunn's River Combo",
@@ -304,6 +334,114 @@ export const blogPosts: BlogPost[] = [
         heading: "Custom Combos",
         paragraphs: [
           "Don't see your ideal stack? Ask us to build a custom day — private yacht mornings plus afternoon waterfall trips, or cruise port combos timed to your ship.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "montego-bay-nightlife-guide",
+    title: "Montego Bay Nightlife Guide — Lounge 2727, Margaritaville & More",
+    excerpt:
+      "Where to go after your tour in Montego Bay — venue picks, transport tips, and how to book a nightlife package with hotel pickup.",
+    date: "2026-03-01",
+    readTime: "6 min read",
+    category: "Nightlife",
+    keywords: [
+      "Montego Bay nightlife",
+      "Lounge 2727 Montego Bay",
+      "Margaritaville Jamaica",
+      "Montego Bay nightlife transport",
+    ],
+    sections: [
+      {
+        heading: "Why Book Nightlife Transport",
+        paragraphs: [
+          "MoBay's best venues — Margaritaville on the Hip Strip, Pier One on the harbour, Lounge 2727, and late-night spots like Taboo — are spread across the city. Pre-booking round-trip transport means no negotiating taxis after dark and a driver who knows your return time.",
+          "Message us on WhatsApp with your hotel, date, and group size. We quote nightlife transport separately from venue cover charges and entry fees.",
+        ],
+      },
+      {
+        heading: "Best Nights for Resort Guests",
+        paragraphs: [
+          "Staying at Breathless, RIU Montego Bay, or Grand Palladium? These properties have their own entertainment — but many guests want one off-property night out. Our Resort Party Hop package routes you from your resort to Hip Strip venues and back on your schedule.",
+        ],
+      },
+      {
+        heading: "Combine Day and Night",
+        paragraphs: [
+          "Popular combo: clear kayak photoshoot or jet car in the morning, Hip Strip dinner at Margaritaville, and Lounge 2727 in the evening — all with one operator on WhatsApp.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "tours-from-rose-hall-resorts",
+    title: "Tours from Rose Hall Resorts — Hyatt, Hilton, Secrets & More",
+    excerpt:
+      "Staying on the Rose Hall corridor? Here's how hotel pickup works, which tours fit your zone, and what transport fees to expect.",
+    date: "2026-03-05",
+    readTime: "7 min read",
+    category: "Resorts",
+    keywords: [
+      "tours from Hyatt Zilara Rose Hall",
+      "Rose Hall excursions",
+      "Hilton Rose Hall tours",
+      "Montego Bay resort pickup",
+    ],
+    sections: [
+      {
+        heading: "Rose Hall Corridor Overview",
+        paragraphs: [
+          "The Rose Hall strip from Ironshore to beyond Falmouth is one of Jamaica's resort-densest zones. Hyatt Zilara, Hyatt Ziva, Hilton Rose Hall, Iberostar Grand, Secrets St. James, and Jewel Grande are all within 15–30 minutes of key tour starting points.",
+          "We pick up from Rose Hall properties daily for clear kayak drone shoots, Rose Hall Great House tours, and full-day Ocho Rios waterfall trips.",
+        ],
+      },
+      {
+        heading: "Transport Fees Explained",
+        paragraphs: [
+          "Rose Hall is outside the free Montego Bay pickup zone for some tours. We always quote the transport fee on WhatsApp before you pay your 50% deposit — no surprises on the day of your tour.",
+          "Clear kayak photoshoot guests from Rose Hall: transport fee applies but is confirmed upfront. Dunn's River and Blue Hole day trips include pickup with zone fee in your total quote.",
+        ],
+      },
+      {
+        heading: "Top Tours for Rose Hall Guests",
+        paragraphs: [
+          "Clear Kayak Photoshoot at One Man Beach — our signature drone experience. Rose Hall Great House — right in your neighborhood. Dunn's River Falls and 9 Mile Bob Marley Tour — half or full day with transport included.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "things-to-do-grand-palladium-jamaica",
+    title: "Things to Do Near Grand Palladium Jamaica — Day Trips & Water Sports",
+    excerpt:
+      "Staying at Grand Palladium Lady Hamilton or Jamaica? Best Ocho Rios day trips, MoBay water sports, and how out-of-area pickup works.",
+    date: "2026-03-10",
+    readTime: "6 min read",
+    category: "Resorts",
+    keywords: [
+      "Grand Palladium Jamaica excursions",
+      "things to do Grand Palladium",
+      "tours from Lucea Jamaica",
+      "Royalton Blue Waters tours",
+    ],
+    sections: [
+      {
+        heading: "Out-of-Area Pickup from Grand Palladium",
+        paragraphs: [
+          "Grand Palladium, Royalton Blue Waters, Excellence Oyster Bay, and Ocean Eden Bay are east and west of central Montego Bay. A transportation fee always applies — we quote it upfront on WhatsApp based on your property and chosen tour.",
+        ],
+      },
+      {
+        heading: "Best Day Trips from the Area",
+        paragraphs: [
+          "Blue Hole and Dunn's River Falls in Ocho Rios are the most popular full-day trips. Rick's Café sunset in Negril is a full-day adventure. Closer options include ATV & Bamboo Rafting combos departing from MoBay — we handle the drive.",
+        ],
+      },
+      {
+        heading: "Nightlife from Grand Palladium",
+        paragraphs: [
+          "Grand Palladium has its own bars and themed parties — but if you want a Hip Strip night out, message us for a nightlife transport package. We pick up, drop you at Margaritaville or Lounge 2727, and collect you when you're ready.",
         ],
       },
     ],

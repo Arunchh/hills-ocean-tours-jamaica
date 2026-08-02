@@ -73,6 +73,44 @@ export type NightlifeVenue = {
   name: string;
   type: string;
   description: string;
+  image: string;
+  vibe: string;
+  highlight: string;
+};
+
+export type NightlifePackage = {
+  name: string;
+  description: string;
+  includes: string[];
+  image: string;
+  badge: string;
+};
+
+export type PartyResort = {
+  name: string;
+  description: string;
+  vibe: string;
+};
+
+export type ResortZone = {
+  slug: string;
+  name: string;
+  tagline: string;
+  description: string;
+  image: string;
+  pickupNote: string;
+  resortCount: number;
+  featuredResorts: string[];
+  topTours: string[];
+};
+
+export type DroneShowcase = {
+  eyebrow: string;
+  title: string;
+  description: string;
+  deliverables: { label: string; detail: string }[];
+  image: string;
+  ctaTourSlug: string;
 };
 
 export type HowItWorksStep = {
@@ -150,8 +188,18 @@ export type SiteConfig = {
     title: string;
     description: string;
     disclaimer: string;
+    packages: NightlifePackage[];
     venues: NightlifeVenue[];
+    partyResorts: PartyResort[];
+    ctaNote: string;
   };
+  resortZones: {
+    eyebrow: string;
+    title: string;
+    description: string;
+    zones: ResortZone[];
+  };
+  droneShowcase: DroneShowcase;
   howItWorks: HowItWorksStep[];
   testimonials: Testimonial[];
   faqs: Faq[];
@@ -259,6 +307,13 @@ export type UiMessages = {
     credentials: string;
     viewLocationGuide: string;
     allLocations: string;
+    viewResortGuide: string;
+    allResortZones: string;
+    bookNightlifePackage: string;
+    exploreDronePackage: string;
+    adultsOnly: string;
+    includes: string;
+    fromYourResort: string;
   };
   sections: {
     services: { eyebrow: string; title: string; description: string };
@@ -280,11 +335,23 @@ export type UiMessages = {
     serviceArea: { eyebrow: string; title: string; description: string };
     promoBanner: { dismiss: string };
     locations: { eyebrow: string; title: string; description: string };
+    nightlife: { eyebrow: string; title: string; description: string; packagesTitle: string; venuesTitle: string; partyResortsTitle: string };
+    resortPickup: { eyebrow: string; title: string; description: string };
+    droneShowcase: { eyebrow: string; title: string; description: string; deliverablesTitle: string };
   };
   locations: {
     popularTours: string;
     exploreGuide: string;
     backToLocations: string;
+  };
+  resorts: {
+    popularTours: string;
+    resortsWeServe: string;
+    pickupPolicy: string;
+    transportNote: string;
+    exploreZones: string;
+    backToResorts: string;
+    faqTitle: string;
   };
   transferForm: {
     tripType: string;
@@ -358,8 +425,28 @@ export type UiMessages = {
   };
 };
 
+export type ResortGuide = {
+  zone: string;
+  slug: string;
+  tagline: string;
+  description: string;
+  image: string;
+  pickupPolicy: string;
+  transportNote: string;
+  resorts: { name: string; area: string; notes: string }[];
+  recommendedTours: {
+    name: string;
+    duration: string;
+    description: string;
+    excursionSlug?: string;
+  }[];
+  highlights: string[];
+  faqs: { question: string; answer: string }[];
+};
+
 export type LocaleContent = {
   siteConfig: SiteConfig;
   cityTourGuides: CityTourGuide[];
+  resortGuides: ResortGuide[];
   blogPosts: BlogPost[];
 };
