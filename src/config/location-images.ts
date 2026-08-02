@@ -59,7 +59,6 @@ export const excursionLandmarkImages: Record<string, string> = {
   "swimming-with-dolphins": locationImages.cities.ochoRios,
   "booby-cay-lobster-lunch": locationImages.cities.negril,
   "romantic-beach-dinner": locationImages.landmarks.montegoBayBeach,
-  "jet-car-rental": locationImages.landmarks.montegoBayBeach,
   "party-catamaran": locationImages.landmarks.montegoBayBeach,
   "private-yacht-charter": locationImages.cities.montegoBay,
   "private-catamaran-charter": locationImages.cities.montegoBay,

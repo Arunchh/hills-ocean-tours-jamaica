@@ -1,5 +1,3 @@
-import { locationImages } from "@/config/location-images";
-
 export type PricingTier = {
   name: string;
   price: number;
@@ -216,7 +214,12 @@ export const tourDetails: TourDetail[] = [
         "Site-wide policy: 50% deposit secures your date. Cancel up to 7 days before for a full deposit refund.",
     },
     ageRequirement: "Driver must be 18+ years old.",
-    image: locationImages.landmarks.montegoBayBeach,
+    image: "/images/tours/jet-car/01-hero-drone.jpg",
+    images: [
+      "/images/tours/jet-car/01-hero-drone.jpg",
+      "/images/tours/jet-car/02-pier-one.jpg",
+      "/images/tours/jet-car/03-lifestyle.jpg",
+    ],
   },
 ];
 

@@ -7,6 +7,12 @@ const bambooRaftingImages = [
   "/images/tours/bamboo-rafting/04-rafting.jpeg",
 ] as const;
 
+const jetCarImages = [
+  "/images/tours/jet-car/01-hero-drone.jpg",
+  "/images/tours/jet-car/02-pier-one.jpg",
+  "/images/tours/jet-car/03-lifestyle.jpg",
+] as const;
+
 export const siteConfig = {
   business: {
     name: "Hills Ocean Tours Jamaica",
@@ -273,8 +279,8 @@ export const siteConfig = {
       priceFrom: 350,
       priceType: "from" as const,
       highlights: ["2-seat or 4-seat", "Edited drone video", "Per car pricing"],
-      image:
-      excursionLandmarkImages["jet-car-rental"],
+      image: jetCarImages[0],
+      images: [...jetCarImages],
       popular: true,
       hasDetailPage: true,
     },
@@ -806,8 +812,7 @@ export const siteConfig = {
         type: "Waterfront Venue",
         description:
           "Waterfront dining and nightlife on the harbour — also home to our jet car experience by day.",
-        image:
-          locationImages.landmarks.montegoBayBeach,
+        image: jetCarImages[1],
         vibe: "Waterfront · Dining + Nightlife",
         highlight: "Combine a jet car session with an evening harbour dinner",
       },
