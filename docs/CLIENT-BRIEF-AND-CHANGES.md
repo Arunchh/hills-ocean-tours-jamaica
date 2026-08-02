@@ -25,6 +25,10 @@
 14. [Suggestions A–G Implementation (August 2026)](#14-suggestions-ag-implementation-august-2026)
 15. [August 2, 2026 — Contact, Instagram & Marketing Expansion](#15-august-2-2026--contact-instagram--marketing-expansion)
 16. [August 2, 2026 — Multi-Page SEO Split](#16-august-2-2026--multi-page-seo-split)
+17. [August 2, 2026 — Booking Calendar (Google Sheet)](#17-august-2-2026--booking-calendar-google-sheet)
+18. [Client Setup Checklist (External Config)](#18-client-setup-checklist-external-config)
+
+**Related doc (action items for client):** [CLIENT-SETUP-CHECKLIST.md](./CLIENT-SETUP-CHECKLIST.md)
 
 ---
 
@@ -100,9 +104,21 @@ The following questions were presented after competitor review. Client answers w
 3. Contact via WhatsApp — especially from mobile sticky bar
 4. Understand service area coverage (`/#service-area`)
 
-### Booking Flow
+### Booking Flow (Updated August 2, 2026)
+
+1. Guest picks **date + time slot** on tour page or `/book/[slug]` (availability from Google Sheet)
+2. Booking saved to Sheet + **Gmail alert** to operator
+3. **WhatsApp** opens with reference ID — guest sends message
+4. Operator confirms price, pickup, and **50% deposit** (CashApp/Zelle) manually
+5. Operator marks booking `confirmed` in Sheet
+
+**Fallback:** If Sheet/env not configured, booking UI shows WhatsApp-only (same as original inquiry flow).
+
+**Still excluded:** Payment gateway, Supabase, Google OAuth on website, WhatsApp Business API.
+
+### Original Inquiry Flow (unchanged for transfers / fallback)
+
 - No instant checkout or payment gateway
-- No WhatsApp Business API integration
 - User submits inquiry via WhatsApp deep link (`wa.me`) or contact form
 - Operator confirms availability, pricing, and pickup manually
 
@@ -258,6 +274,13 @@ Nav uses **route paths**, not hash anchors (`/#tours` removed).
 - **Map:** OpenStreetMap embed (no API key) centered on Montego Bay
 - **Copy:** Explicitly states Kingston is outside service area
 
+### 7.4 `BookingPanel` + `BookingCalendar` (August 2, 2026)
+
+- **Locations:** `/tours/[slug]#book`, `/book/[slug]`
+- **Data source:** Google Sheet via Apps Script (see [BOOKING-SHEET-SETUP.md](./BOOKING-SHEET-SETUP.md))
+- **Behavior:** Month calendar → time slots → guest details → save to Sheet + Gmail → WhatsApp with reference ID
+- **Fallback:** WhatsApp-only CTA when Sheet/env not configured or tour not in `TourSlots`
+
 ---
 
 ## 8. Modified Components
@@ -387,6 +410,22 @@ Added: airport transfer, Falmouth cruise port, combo tours, private yacht charte
 
 ## 10. Booking & Policy Model
 
+### Online Booking Calendar (Google Sheet — Option A)
+
+**Implemented August 2, 2026.** See [BOOKING-SHEET-SETUP.md](./BOOKING-SHEET-SETUP.md) and [CLIENT-SETUP-CHECKLIST.md](./CLIENT-SETUP-CHECKLIST.md).
+
+| Layer | Technology |
+|-------|------------|
+| Slot config (client-editable) | Google Sheet tab `TourSlots` |
+| Blackouts & booking log | Sheet tabs `Blackouts`, `Bookings` |
+| API | Apps Script web app (`scripts/google-booking/Code.gs`) |
+| Website proxy | `/api/booking/availability`, `/api/booking/submit` |
+| Guest UI | `BookingPanel` on `/tours/[slug]#book` and `/book/[slug]` |
+| Confirmation | WhatsApp + 50% deposit (manual — no payment gateway) |
+| Operator alerts | Gmail via Apps Script `MailApp` |
+
+**Environment variables (server):** `BOOKING_SCRIPT_URL`, `BOOKING_SCRIPT_SECRET`
+
 ### WhatsApp Integration (No API)
 
 All WhatsApp actions use `formatWhatsAppLink()` in `src/lib/utils.ts`:
@@ -400,7 +439,26 @@ https://wa.me/{phone}?text={encodedMessage}
 - Mobile sticky bar
 - Transfer quote form submit
 - Contact section
-- Tour detail pages (existing)
+- Tour detail pages
+- **Booking panel** — post-submit WhatsApp with date, time, duration, reference ID
+
+### Booking WhatsApp Message Template (after online request)
+
+```
+Hi {business}, I'd like to book:
+
+Tour: {tour}
+Date: {date}
+Start time: {time} (Jamaica time)
+Duration: {duration}
+Hotel: {resort}
+Guests: {guests}
+Name: {name}
+Phone: {phone}
+Reference: {reference}
+
+Please confirm availability and deposit details.
+```
 
 ### Transfer WhatsApp Message Template
 
@@ -433,23 +491,28 @@ Round trip: {roundTrip}
 
 ## 11. Pending Client Deliverables
 
+> **Full task list with checkboxes:** [CLIENT-SETUP-CHECKLIST.md](./CLIENT-SETUP-CHECKLIST.md)
+
 | Item | Config Location | Status |
 |------|-----------------|--------|
 | Real phone number | `business.phone`, `phoneDisplay` | **Done** — `+1 (876) 571-2157` |
 | Real WhatsApp number | `business.whatsapp` | **Done** — `18765712157` |
 | Real email | `business.email`, `zelle`, `leadNotificationEmail` | **Done** — `hillsoceantoursja@gmail.com` |
+| **Google Sheet booking calendar** | Apps Script + env vars | **Not configured** — see [BOOKING-SHEET-SETUP.md](./BOOKING-SHEET-SETUP.md) |
+| **Web3Forms contact form** | `NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY` or `communications.web3formsAccessKey` | Empty — mailto fallback |
+| **Tawk.to live chat** | `NEXT_PUBLIC_TAWK_PROPERTY_ID`, `NEXT_PUBLIC_TAWK_WIDGET_ID` | Empty — widget hidden |
+| **Vercel production env vars** | Hosting dashboard | Pending — booking + forms + chat |
 | JTB license number | `business.licenseNumber` | `JTB-TO-[TBD]` |
 | Google rating & review count | `business.googleRating`, `reviewCount` | Hidden until `reviewCount > 0` |
-| CashApp / Zelle handles | `business.cashapp`, `zelle` | Placeholder |
+| CashApp / Zelle handles | `business.cashapp`, `zelle` | Placeholder — verify before taking deposits |
 | Tour photos | `excursions[].image` | Unsplash placeholders |
 | Testimonials | `testimonials[]` | Demo quotes — replace with real |
 | Promo banner content | `promoBanner` | Disabled — enable when ready |
-| Web3Forms key | `communications.web3formsAccessKey` | Empty |
-| Tawk live chat IDs | `communications.tawkPropertyId`, `tawkWidgetId` | Empty |
 | Social media URLs | `social.*` | **Instagram done** — [instagram.com/hillsoceansja](https://www.instagram.com/hillsoceansja/); Facebook/TripAdvisor still placeholders |
-| Production domain | `seo.siteUrl` | `hillsoceantoursjamaica.com` |
+| Production domain DNS | `seo.siteUrl` | `hillsoceantoursjamaica.com` — verify DNS + HTTPS |
 | Combo/yacht pricing | `excursions[].priceFrom` | “Get a Quote” for most |
 | Additional cancellation rules | `faqs`, `howItWorks` | Client to update later |
+| Transfers page booking calendar | Sheet row `transfers` | Template CSV included — UI not wired yet |
 
 ---
 
@@ -491,6 +554,20 @@ Production build verified successfully with `npm run build`.
 - Photo/video gallery page
 - Additional tour detail pages for combo/yacht offerings
 - Per-tour deposit amounts (currently site-wide 50% policy)
+- ~~Online date/time booking with availability~~ — **Done (Aug 2)** — Google Sheet Option A; transfers page wiring optional
+
+### External services to configure before launch
+
+See **[CLIENT-SETUP-CHECKLIST.md](./CLIENT-SETUP-CHECKLIST.md)** for step-by-step tasks:
+
+| Service | Purpose | Cost |
+|---------|---------|------|
+| Gmail (`hillsoceantoursja@gmail.com`) | Master account for Sheet, alerts, Web3Forms, Tawk | Free |
+| Google Sheet + Apps Script | Booking calendar & slot config | Free |
+| Web3Forms | Contact form → Gmail | Free tier |
+| Tawk.to | Live chat widget | Free |
+| Vercel env vars | Production secrets | Free hobby tier |
+| WhatsApp (phone) | Confirmations & deposits | Free (no API) |
 
 ### Config Quick Reference
 
@@ -498,6 +575,10 @@ Production build verified successfully with `npm run build`.
 | To show Google rating in hero | Set `business.reviewCount` to a positive number |
 | To add a new combo tour | Add to `excursions[]` with `tourKind: "combo"`, `category: "combo"` |
 | To change deposit policy | Update `depositPolicy`, `howItWorks`, and relevant `faqs` |
+| To enable online booking | Complete [CLIENT-SETUP-CHECKLIST.md](./CLIENT-SETUP-CHECKLIST.md) §2 + set `BOOKING_SCRIPT_*` env vars |
+| To enable contact form email | Web3Forms key — checklist §3 |
+| To enable live chat | Tawk.to IDs — checklist §4 |
+| To add bookable tour slots | Add row to Sheet `TourSlots` (no redeploy) |
 
 ---
 
@@ -718,9 +799,76 @@ Quote-only tours auto-generate pages via `getTourPageData()`.
 
 ```bash
 npm run build
-# ✓ 146 static pages
+# ✓ 280 static pages (includes /book/[slug] per tour)
 ```
 
 ---
 
-*This document should be shared with the client before launch to confirm positioning, policies, and remaining content needs.*
+## 17. August 2, 2026 — Booking Calendar (Google Sheet)
+
+### 17.1 Approach
+
+**Option A:** Google Sheet as source of truth for per-tour slot times, duration, and capacity. No Supabase, no Google OAuth on the website, no payment gateway. Suitable for ~50 bookings/month at $0 cost.
+
+### 17.2 Files Added
+
+| File | Purpose |
+|------|---------|
+| `scripts/google-booking/Code.gs` | Apps Script — availability API, booking write, Gmail notify |
+| `scripts/google-booking/TourSlots-template.csv` | Starter slot config for main tours |
+| `docs/BOOKING-SHEET-SETUP.md` | Operator + developer setup guide |
+| `docs/CLIENT-SETUP-CHECKLIST.md` | Launch checklist (Gmail, Tawk, Web3Forms, Sheet, Vercel) |
+| `src/lib/booking-types.ts` | Shared TypeScript types |
+| `src/lib/booking-api.ts` | Server-side Apps Script client |
+| `src/app/api/booking/availability/route.ts` | GET proxy — tour config, dates, slots |
+| `src/app/api/booking/submit/route.ts` | POST proxy — create booking |
+| `src/components/booking/BookingPanel.tsx` | Main booking UI + WhatsApp handoff |
+| `src/components/booking/BookingCalendar.tsx` | Date picker + time slot chips |
+| `src/app/[locale]/book/[slug]/page.tsx` | Book page for catalog tours |
+| `src/i18n/ui/*.ts` | `booking.*` strings (en, es, pt, fr) |
+
+### 17.3 Files Modified
+
+| File | Change |
+|------|--------|
+| `src/app/[locale]/tours/[slug]/page.tsx` | Embedded `BookingPanel` at `#book` |
+| `src/components/sections/TourCatalog.tsx` | Book links → `#book` or `/book/[slug]` |
+| `.env.example` | `BOOKING_SCRIPT_URL`, `BOOKING_SCRIPT_SECRET` |
+| `src/i18n/types.ts` | `UiMessages.booking` type |
+
+### 17.4 Guest Flow
+
+1. Select date on calendar (open / full / closed from Sheet)
+2. Select time slot (from `TourSlots.slot_times`, minus existing bookings + blackouts)
+3. Enter name, phone, hotel, guests
+4. Submit → row in `Bookings` + Gmail to operator
+5. WhatsApp opens with structured message + reference ID (`HOT-…`)
+6. Operator confirms + 50% deposit off-site
+
+### 17.5 Activation
+
+Requires client/developer setup documented in [CLIENT-SETUP-CHECKLIST.md](./CLIENT-SETUP-CHECKLIST.md). Until env vars are set, UI falls back to WhatsApp-only.
+
+---
+
+## 18. Client Setup Checklist (External Config)
+
+All non-code configuration tasks are maintained in:
+
+**[docs/CLIENT-SETUP-CHECKLIST.md](./CLIENT-SETUP-CHECKLIST.md)**
+
+Includes checkboxes for:
+
+- Gmail / Google account security
+- Google Sheet booking calendar (Apps Script deploy)
+- Web3Forms (contact form → Gmail)
+- Tawk.to live chat widget
+- WhatsApp verification
+- Vercel environment variables
+- Custom domain DNS
+- JTB license, CashApp/Zelle, photos, testimonials, social links
+- Pre-launch smoke test sequence
+
+---
+
+*This document should be shared with the client before launch to confirm positioning, policies, and remaining content needs. Use the setup checklist to track integration tasks.*

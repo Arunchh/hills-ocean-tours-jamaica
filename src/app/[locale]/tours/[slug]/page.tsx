@@ -11,6 +11,8 @@ import { TourImageCarousel } from "@/components/ui/TourImageCarousel";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { MobileCTA } from "@/components/layout/MobileCTA";
+import { BookingPanel } from "@/components/booking/BookingPanel";
+import { BookingHashScroll } from "@/components/booking/BookingHashScroll";
 import { formatPrice, formatWhatsAppLink } from "@/lib/utils";
 import type { Metadata } from "next";
 
@@ -59,6 +61,7 @@ export default async function TourDetailPage({ params }: Props) {
   return (
     <>
       <Header />
+      <BookingHashScroll />
       <main>
         <div className="safe-top rasta-gradient-bg pb-10 pt-24 sm:pb-12 sm:pt-28">
           <div className="mx-auto max-w-4xl px-4 sm:px-6">
@@ -89,6 +92,19 @@ export default async function TourDetailPage({ params }: Props) {
                   {ui.common.recommendedTime}: {tour.recommendedTime}
                 </span>
               )}
+            </div>
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+              <Button href="#book" variant="primary" fullWidthMobile>
+                {ui.booking.bookNow}
+              </Button>
+              <Button
+                href={formatWhatsAppLink(siteConfig.business.whatsapp, whatsappMessage)}
+                variant="outline"
+                external
+                fullWidthMobile
+              >
+                {ui.common.whatsappUs}
+              </Button>
             </div>
           </div>
           <JamaicaStripe variant="flag" className="mt-10" />
@@ -303,6 +319,15 @@ export default async function TourDetailPage({ params }: Props) {
               </p>
             </section>
 
+            {/* Book online */}
+            <div className="mt-10">
+              <BookingPanel
+                tourSlug={tour.slug}
+                tourName={tour.name}
+                fallbackWhatsAppMessage={whatsappMessage}
+              />
+            </div>
+
             {/* Deposit */}
             <section className="mt-10 rounded-2xl bg-jamaica-black-soft p-6 text-white sm:p-8">
               <h2 className="font-display text-xl font-bold text-jamaica-gold sm:text-2xl">
@@ -376,14 +401,18 @@ export default async function TourDetailPage({ params }: Props) {
                 })}
               </p>
               <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-center">
+                <Button href="#book" variant="primary" fullWidthMobile>
+                  {ui.booking.bookNow}
+                </Button>
                 <Button
                   href={formatWhatsAppLink(siteConfig.business.whatsapp, whatsappMessage)}
-                  variant="primary"
+                  variant="secondary"
+                  external
                   fullWidthMobile
                 >
                   {ui.common.whatsappUs}
                 </Button>
-                <Button href={localizeHref("/contact", locale)} variant="secondary" fullWidthMobile>
+                <Button href={localizeHref("/contact", locale)} variant="outline" fullWidthMobile>
                   {ui.common.getQuote}
                 </Button>
               </div>

@@ -7,7 +7,7 @@ import { TourImageCarousel } from "@/components/ui/TourImageCarousel";
 import { Button } from "@/components/ui/Button";
 import { useI18n } from "@/i18n/LocaleProvider";
 import { formatUi } from "@/i18n/index";
-import { formatPrice, formatWhatsAppLink } from "@/lib/utils";
+import { formatPrice } from "@/lib/utils";
 import { SectionTravelDecor } from "@/components/ui/HomeTravelDecor";
 import { localizeHref } from "@/i18n/paths";
 
@@ -30,10 +30,9 @@ export function FeaturedTours() {
 
         <div className="mt-10 grid gap-8 sm:mt-14 lg:grid-cols-2">
           {featured.map((tour) => {
-            const whatsappMessage = formatUi(ui.contact.whatsappTour, {
-              business: siteConfig.business.name,
-              tour: tour.name,
-            });
+            const bookLink = tour.hasDetailPage
+              ? localizeHref(`/tours/${tour.slug}#book`, locale)
+              : localizeHref(`/book/${tour.slug}`, locale);
 
             return (
               <article
@@ -83,23 +82,18 @@ export function FeaturedTours() {
                     ))}
                   </ul>
                   <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+                    <Button href={bookLink} variant="primary" fullWidthMobile>
+                      {ui.common.bookThisTour}
+                    </Button>
                     {tour.hasDetailPage && (
                       <Button
                         href={localizeHref(`/tours/${tour.slug}`, locale)}
-                        variant="primary"
+                        variant="secondary"
                         fullWidthMobile
                       >
                         {ui.common.viewDetails}
                       </Button>
                     )}
-                    <Button
-                      href={formatWhatsAppLink(siteConfig.business.whatsapp, whatsappMessage)}
-                      variant={tour.hasDetailPage ? "secondary" : "primary"}
-                      fullWidthMobile
-                      external
-                    >
-                      {ui.common.bookThisTour}
-                    </Button>
                   </div>
                 </div>
               </article>

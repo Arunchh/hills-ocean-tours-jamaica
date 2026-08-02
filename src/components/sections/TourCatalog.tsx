@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/Button";
 import { JamaicaStripe } from "@/components/ui/JamaicaStripe";
 import { useI18n } from "@/i18n/LocaleProvider";
 import { formatUi } from "@/i18n/index";
-import { formatPrice, formatWhatsAppLink } from "@/lib/utils";
+import { formatPrice } from "@/lib/utils";
 import { localizeHref } from "@/i18n/paths";
 
 type TourKindFilter = "all" | "single" | "combo";
@@ -34,13 +34,9 @@ export function TourCatalog() {
 
   const bookHref = (tour: (typeof siteConfig.excursions)[number]) => {
     if (tour.hasDetailPage) {
-      return localizeHref(`/tours/${tour.slug}`, locale);
+      return localizeHref(`/tours/${tour.slug}#book`, locale);
     }
-    const message = formatUi(ui.contact.whatsappTour, {
-      business: siteConfig.business.name,
-      tour: tour.name,
-    });
-    return formatWhatsAppLink(siteConfig.business.whatsapp, message);
+    return localizeHref(`/book/${tour.slug}`, locale);
   };
 
   return (
@@ -174,15 +170,23 @@ export function TourCatalog() {
                     </li>
                   ))}
                 </ul>
-                <div className="mt-6">
+                <div className="mt-6 flex flex-col gap-2 sm:flex-row">
                   <Button
                     href={bookHref(tour)}
-                    variant="secondary"
+                    variant="primary"
                     fullWidthMobile
-                    external={!tour.hasDetailPage}
                   >
-                    {tour.hasDetailPage ? ui.common.viewDetails : ui.common.bookThisTour}
+                    {ui.common.bookThisTour}
                   </Button>
+                  {tour.hasDetailPage && (
+                    <Button
+                      href={localizeHref(`/tours/${tour.slug}`, locale)}
+                      variant="secondary"
+                      fullWidthMobile
+                    >
+                      {ui.common.viewDetails}
+                    </Button>
+                  )}
                 </div>
               </div>
             </article>
