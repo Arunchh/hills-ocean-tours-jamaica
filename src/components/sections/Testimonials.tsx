@@ -24,12 +24,20 @@ export function Testimonials() {
           description={ui.sections.testimonials.description}
         />
 
+        <p className="mx-auto mt-4 max-w-3xl text-center text-sm leading-relaxed text-jamaica-black-soft/80 sm:mt-6">
+          {ui.sections.testimonials.instagramNote}
+        </p>
+
         <div className="mt-10 grid gap-4 sm:mt-14 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3 lg:gap-8">
           {siteConfig.testimonials.map((review) => (
             <article
               key={review.id}
               className="relative flex flex-col rounded-2xl border-2 border-jamaica-green/10 bg-jamaica-cream p-5 sm:p-6"
             >
+              <div className="mb-3 inline-flex w-fit items-center gap-1.5 rounded-full bg-jamaica-green/10 px-2.5 py-1 text-[11px] font-bold uppercase tracking-wide text-jamaica-green">
+                <AtSign className="h-3.5 w-3.5" aria-hidden />
+                {ui.sections.testimonials.instagramComment}
+              </div>
               <Quote className="absolute right-6 top-6 h-8 w-8 text-jamaica-gold/40" />
 
               {review.experience ? (
@@ -63,7 +71,11 @@ export function Testimonials() {
                           year: "numeric",
                         })}
                       </p>
-                    ) : null}
+                    ) : (
+                      <p className="text-sm text-jamaica-green">
+                        {ui.sections.testimonials.instagramSource}
+                      </p>
+                    )}
                   </div>
                   {review.source === "instagram" ? (
                     <AtSign className="h-5 w-5 shrink-0 text-jamaica-green" aria-hidden />

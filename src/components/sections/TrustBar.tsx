@@ -1,7 +1,6 @@
 "use client";
 
 import { Award, Camera, Clock, DollarSign, MapPin, Shield, Star, Users } from "lucide-react";
-import { TrustBarTravelDecor } from "@/components/ui/HomeTravelDecor";
 import { JamaicaStripe } from "@/components/ui/JamaicaStripe";
 import { useI18n } from "@/i18n/LocaleProvider";
 
@@ -19,8 +18,7 @@ const iconMap = {
 export function TrustBar() {
   const { siteConfig } = useI18n();
   return (
-    <section className="relative bg-jamaica-black">
-      <TrustBarTravelDecor />
+    <section className="bg-jamaica-black">
       <JamaicaStripe variant="rasta" />
       <div className="mx-auto grid max-w-7xl grid-cols-2 gap-3 px-4 py-6 sm:gap-6 sm:px-6 sm:py-8 md:grid-cols-4 lg:px-8">
         {siteConfig.trustPoints.map((point) => {

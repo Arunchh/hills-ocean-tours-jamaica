@@ -1,6 +1,5 @@
 "use client";
 
-import { TravelSticker } from "@/components/ui/TravelSticker";
 import { JamaicaStripe } from "@/components/ui/JamaicaStripe";
 import { useI18n } from "@/i18n/LocaleProvider";
 
@@ -10,17 +9,6 @@ export function ValueProps() {
   return (
     <section className="section-py bg-jamaica-cream">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-6 flex justify-center gap-4 sm:mb-8" aria-hidden="true">
-          <div className="-rotate-6">
-            <TravelSticker type="bus" size="sm" label="LOCAL TOURS" />
-          </div>
-          <div className="rotate-6 hidden sm:block">
-            <TravelSticker type="passport" size="sm" />
-          </div>
-          <div className="-rotate-3 hidden md:block">
-            <TravelSticker type="plane" size="sm" label="AIRPORT" />
-          </div>
-        </div>
         <div className="grid gap-4 sm:gap-8 md:grid-cols-3">
           {siteConfig.valueProps.map((prop, i) => (
             <article

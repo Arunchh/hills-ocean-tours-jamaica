@@ -27,6 +27,7 @@ export function BookingPanel({ tourSlug, tourName, fallbackWhatsAppMessage }: Pr
   const { siteConfig, ui, locale } = useI18n();
   const b = ui.booking;
   const detailsRef = useRef<HTMLDivElement>(null);
+  const slotsRef = useRef<HTMLDivElement>(null);
 
   const now = new Date();
   const [viewYear, setViewYear] = useState(now.getFullYear());
@@ -121,6 +122,12 @@ export function BookingPanel({ tourSlug, tourName, fallbackWhatsAppMessage }: Pr
   useEffect(() => {
     if (selectedDate && enabled) loadSlots(selectedDate);
   }, [selectedDate, enabled, loadSlots]);
+
+  useEffect(() => {
+    if (selectedDate && slotsRef.current) {
+      slotsRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, [selectedDate]);
 
   useEffect(() => {
     if (selectedTime && detailsRef.current) {
@@ -243,7 +250,10 @@ export function BookingPanel({ tourSlug, tourName, fallbackWhatsAppMessage }: Pr
   }
 
   return (
-    <section id="book" className="scroll-mt-28 rounded-2xl border-2 border-jamaica-green/20 bg-jamaica-cream p-5 sm:p-8">
+    <section
+      id="book"
+      className="scroll-mt-28 rounded-2xl border-2 border-jamaica-green/20 bg-jamaica-cream p-5 pb-8 sm:p-8 md:pb-8"
+    >
       <div className="mb-2">
         <p className="text-xs font-bold uppercase tracking-wider text-jamaica-green">{b.eyebrow}</p>
         <h2 className="mt-1 font-display text-xl font-bold text-jamaica-black sm:text-2xl">{b.title}</h2>
@@ -283,7 +293,7 @@ export function BookingPanel({ tourSlug, tourName, fallbackWhatsAppMessage }: Pr
           }}
         />
 
-        <div className="min-w-0">
+        <div ref={slotsRef} className="min-w-0 scroll-mt-28">
           {!selectedDate ? (
             <div className="flex flex-col items-center justify-center rounded-2xl border-2 border-dashed border-jamaica-green/20 bg-white/50 px-6 py-12 text-center">
               <Calendar className="h-10 w-10 text-jamaica-green/40" aria-hidden="true" />

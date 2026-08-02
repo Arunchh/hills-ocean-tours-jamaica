@@ -87,13 +87,6 @@ export function Footer() {
                 {siteConfig.business.businessHours}
               </li>
             </ul>
-            <ul className="mt-4 space-y-1 text-xs text-white/50">
-              {siteConfig.business.credentials.map((cred) => (
-                <li key={cred.label}>
-                  {cred.label}: {cred.value}
-                </li>
-              ))}
-            </ul>
           </div>
 
           <div>

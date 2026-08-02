@@ -94,11 +94,14 @@ export const uiEs: UiMessages = {
     },
     testimonials: {
       eyebrow: "Comunidad en Instagram",
-      title: "Lo que más interactúan los viajeros",
+      title: "Comentarios reales de nuestro Instagram",
       description:
-        "Destacados recientes de @hillsoceansja — publicaciones y reels de los últimos dos años con likes, vistas y comentarios reales en Instagram.",
-      instagramSource: "@hillsoceansja",
-      viewOnInstagram: "Ver publicación en Instagram",
+        "Cada cita abajo es un comentario genuino de viajeros en publicaciones y reels de @hillsoceansja — no textos de marketing escritos para este sitio.",
+      instagramNote:
+        "Mostramos likes y vistas cuando están disponibles. Toca cualquier tarjeta para abrir la publicación original en Instagram.",
+      instagramSource: "Comentario real en Instagram",
+      instagramComment: "Comentario en Instagram",
+      viewOnInstagram: "Ver publicación original en Instagram",
     },
     faq: {
       eyebrow: "Preguntas frecuentes",

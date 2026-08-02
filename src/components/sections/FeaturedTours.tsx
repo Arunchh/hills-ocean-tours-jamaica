@@ -8,7 +8,6 @@ import { Button } from "@/components/ui/Button";
 import { useI18n } from "@/i18n/LocaleProvider";
 import { formatUi } from "@/i18n/index";
 import { formatPrice } from "@/lib/utils";
-import { SectionTravelDecor } from "@/components/ui/HomeTravelDecor";
 import { localizeHref } from "@/i18n/paths";
 
 export function FeaturedTours() {
@@ -19,9 +18,8 @@ export function FeaturedTours() {
   );
 
   return (
-    <section id="featured" className="section-py relative overflow-hidden bg-white">
-      <SectionTravelDecor variant="right" />
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section id="featured" className="section-py bg-white">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow={ui.sections.featured.eyebrow}
           title={ui.sections.featured.title}

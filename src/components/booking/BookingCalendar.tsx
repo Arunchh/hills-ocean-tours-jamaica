@@ -131,7 +131,7 @@ export function BookingDatePicker({
                 disabled={disabled}
                 title={statusHint || undefined}
                 onClick={() => onSelectDate(cell.iso!)}
-                className={`flex h-10 min-h-10 touch-manipulation items-center justify-center rounded-lg text-sm font-semibold transition-colors sm:h-9 ${
+                className={`flex h-11 min-h-11 touch-manipulation items-center justify-center rounded-lg text-sm font-semibold transition-colors sm:h-9 sm:min-h-9 ${
                   isSelected
                     ? "bg-jamaica-green text-white"
                     : disabled

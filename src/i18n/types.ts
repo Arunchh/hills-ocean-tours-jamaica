@@ -338,7 +338,9 @@ export type UiMessages = {
       eyebrow: string;
       title: string;
       description: string;
+      instagramNote: string;
       instagramSource: string;
+      instagramComment: string;
       viewOnInstagram: string;
     };
     faq: { eyebrow: string; title: string; description: string };

@@ -2,7 +2,6 @@
 
 import { Hotel, Map, Plane, Users } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { SectionTravelDecor } from "@/components/ui/HomeTravelDecor";
 import { useI18n } from "@/i18n/LocaleProvider";
 import { formatUi } from "@/i18n/index";
 import { formatPrice } from "@/lib/utils";
@@ -18,9 +17,8 @@ export function Services() {
   const { siteConfig, ui } = useI18n();
 
   return (
-    <section id="services" className="section-py relative overflow-hidden bg-jamaica-cream">
-      <SectionTravelDecor variant="center" />
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section id="services" className="section-py bg-jamaica-cream">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow={ui.sections.services.eyebrow}
           title={ui.sections.services.title}

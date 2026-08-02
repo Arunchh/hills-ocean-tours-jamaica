@@ -94,11 +94,14 @@ export const uiPt: UiMessages = {
     },
     testimonials: {
       eyebrow: "Comunidade no Instagram",
-      title: "O que os viajantes mais engajam",
+      title: "Comentários reais do nosso Instagram",
       description:
-        "Destaques recentes de @hillsoceansja — posts e reels dos últimos dois anos com curtidas, visualizações e comentários reais no Instagram.",
-      instagramSource: "@hillsoceansja",
-      viewOnInstagram: "Ver publicação no Instagram",
+        "Cada citação abaixo é um comentário genuíno de viajantes em posts e reels de @hillsoceansja — não textos de marketing escritos para este site.",
+      instagramNote:
+        "Curtidas e visualizações aparecem quando disponíveis. Toque em qualquer card para abrir a publicação original no Instagram.",
+      instagramSource: "Comentário real no Instagram",
+      instagramComment: "Comentário no Instagram",
+      viewOnInstagram: "Ver publicação original no Instagram",
     },
     faq: {
       eyebrow: "Perguntas frequentes",
