@@ -680,4 +680,47 @@ npm run build
 
 ---
 
+## 16. August 2, 2026 — Multi-Page SEO Split
+
+### 16.1 Rationale
+
+The homepage previously stacked 16 sections on one URL with hash anchors. Search engines index **URLs**, not `#sections`. Splitting high-intent content into dedicated routes improves unique titles, canonical URLs for ads/sharing, sitemap coverage, and a shorter conversion-focused homepage.
+
+### 16.2 New Routes
+
+| Route | File | Content |
+|-------|------|---------|
+| `/tours` | `tours/page.tsx` | FeaturedTours + DroneShowcase + TourCatalog |
+| `/transfers` | `transfers/page.tsx` | TransferQuote + TransportPolicy + ServiceAreaMap |
+| `/nightlife` | `nightlife/page.tsx` | Nightlife section |
+| `/resorts` | `resorts/page.tsx` | Resort zone index |
+| `/contact` | `contact/page.tsx` | ContactSection + FAQ |
+| `/locations` | `locations/page.tsx` | Location guide index |
+
+### 16.3 New Components
+
+- `SiteChrome.tsx` — shared layout wrapper
+- `SubpageHero.tsx` — subpage hero band
+- `HomeExplore.tsx` — homepage hub cards
+- `tour-page-data.ts` — tour detail + excursion fallback
+
+### 16.4 Tour Detail Pages (13 total)
+
+`hasDetailPage: true` for: clear-kayak, jet-car, blue-hole, dunns-river-falls, luminous-lagoon, konoko-falls, ricks-cafe, nine-mile-bob-marley, rose-hall-great-house, romantic-beach-dinner, private-yacht-charter, drone-aerial-package, atv-bamboo-rafting-combo.
+
+Quote-only tours auto-generate pages via `getTourPageData()`.
+
+### 16.5 Sitemap
+
+`src/app/sitemap.ts` now lists homepage, 7 hub routes, all blog posts, 3 locations, 4 resort zones, and 13 tour details — per locale (~116 entries).
+
+### 16.6 Build
+
+```bash
+npm run build
+# ✓ 146 static pages
+```
+
+---
+
 *This document should be shared with the client before launch to confirm positioning, policies, and remaining content needs.*
