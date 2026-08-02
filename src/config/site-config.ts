@@ -1,3 +1,10 @@
+const bambooRaftingImages = [
+  "/images/tours/bamboo-rafting/01-hero.jpeg",
+  "/images/tours/bamboo-rafting/02-rafting.jpeg",
+  "/images/tours/bamboo-rafting/03-rafting.jpeg",
+  "/images/tours/bamboo-rafting/04-rafting.jpeg",
+] as const;
+
 export const siteConfig = {
   business: {
     name: "Hills Ocean Tours Jamaica",
@@ -355,8 +362,8 @@ export const siteConfig = {
       priceFrom: 0,
       priceType: "quote" as const,
       highlights: ["River raft", "Relaxing float", "Nature scenery"],
-      image:
-        "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=800&q=80",
+      image: bambooRaftingImages[0],
+      images: [...bambooRaftingImages],
       popular: false,
       hasDetailPage: false,
     },
@@ -475,8 +482,8 @@ export const siteConfig = {
       priceFrom: 0,
       priceType: "quote" as const,
       highlights: ["ATV trails", "River bamboo raft", "One package price"],
-      image:
-        "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=800&q=80",
+      image: bambooRaftingImages[0],
+      images: [...bambooRaftingImages],
       popular: true,
       hasDetailPage: true,
     },
