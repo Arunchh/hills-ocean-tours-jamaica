@@ -32,6 +32,10 @@ export const siteConfigPt: SiteConfig = {
     { label: "Depósito de 50% para reservar", icon: "dollar" },
     { label: "Cancelamento 7 dias antes", icon: "clock" },
     { label: "Confirmação via WhatsApp", icon: "star" },
+    { label: "Foto e vídeo com drone", icon: "camera" },
+    { label: "30+ excursões", icon: "map" },
+    { label: "Pacotes de nightlife", icon: "star" },
+    { label: "17K+ no Instagram", icon: "users" },
   ],
   valueProps: [
     {

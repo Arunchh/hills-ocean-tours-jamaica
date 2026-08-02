@@ -93,10 +93,12 @@ export const uiEs: UiMessages = {
         "Sin apps complicadas. Escríbenos por WhatsApp, paga tu depósito, te recogemos y disfrutas.",
     },
     testimonials: {
-      eyebrow: "Opiniones de huéspedes",
-      title: "Lo que dicen los viajeros",
+      eyebrow: "Comunidad en Instagram",
+      title: "Lo que más interactúan los viajeros",
       description:
-        "Parejas, familias y grupos que reservaron kayak transparente, jet cars y excursiones de un día con nosotros.",
+        "Destacados recientes de @hillsoceansja — publicaciones y reels de los últimos dos años con likes, vistas y comentarios reales en Instagram.",
+      instagramSource: "@hillsoceansja",
+      viewOnInstagram: "Ver publicación en Instagram",
     },
     faq: {
       eyebrow: "Preguntas frecuentes",

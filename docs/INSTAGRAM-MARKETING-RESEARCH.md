@@ -143,7 +143,11 @@ Additional hashtag targets (for future blog/meta copy): Jewel Grande, Zoetry, Ro
 
 - Instagram is the **primary visual channel** — client should grant permission to reuse reel stills / drone frames on the website (hero, tour cards, testimonials background).
 - Posts tag collaborator `@italia.ceo` on drone content — credit if reusing media.
-- No public review count scraped; keep site policy of **no fake ratings** until real Google/TripAdvisor data is provided.
+- **Implemented (Aug 2, 2026):** Homepage testimonials and trust badges now source from [@hillsoceansja](https://www.instagram.com/hillsoceansja/) public embed data (Aug 2024 – Jul 2026). See `src/config/instagram-social-proof.ts`.
+- Profile (embed): **~17K followers**, **1,372 posts**, bio tagline **Drone shoots • Tours • Jamaica**.
+- Top engagement post scraped: [Pachie's Seafood reel](https://www.instagram.com/reel/DbTJaE4yt5-/) — 6.5K+ likes, 191 comments, 39K+ views (Jul 2026).
+- Comment text is **not** embedded in public Instagram oEmbed — cards link to posts for readers to view comments on Instagram. No fabricated guest names or quotes.
+- Site policy: **no fake Google aggregate ratings** in JSON-LD until real Google/TripAdvisor data is provided (`reviewCount: 0`).
 
 ---
 
@@ -165,7 +169,7 @@ Additional hashtag targets (for future blog/meta copy): Jewel Grande, Zoetry, Ro
 - Confirm YS Falls, Floyd’s Pelican Bar, and Negril day trips are actively sold before adding fixed USD prices
 - Grant permission to reuse Instagram drone/reel imagery on tour cards and hero
 - Credit collaborator `@italia.ceo` if reusing their drone content
-- Replace demo testimonials when real reviews are available
+- Replace demo testimonials when real reviews are available — **Done:** Instagram community cards with verified engagement metrics
 
 ---
 

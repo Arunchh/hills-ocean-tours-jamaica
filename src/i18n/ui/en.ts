@@ -93,10 +93,12 @@ export const uiEn: UiMessages = {
         "No complicated apps. WhatsApp us, pay your deposit, get picked up, and enjoy.",
     },
     testimonials: {
-      eyebrow: "Guest Reviews",
-      title: "What Travelers Say",
+      eyebrow: "Instagram Community",
+      title: "What Travelers Engage With",
       description:
-        "Couples, families, and groups who booked clear kayak shoots, jet cars, and day tours with us.",
+        "Recent highlights from @hillsoceansja — posts and reels from the last two years with real likes, views, and comments on Instagram.",
+      instagramSource: "@hillsoceansja",
+      viewOnInstagram: "View post on Instagram",
     },
     faq: {
       eyebrow: "FAQ",

@@ -93,10 +93,12 @@ export const uiPt: UiMessages = {
         "Sem apps complicados. Fale conosco no WhatsApp, pague seu depósito, buscamos você e aproveite.",
     },
     testimonials: {
-      eyebrow: "Avaliações de hóspedes",
-      title: "O que os viajantes dizem",
+      eyebrow: "Comunidade no Instagram",
+      title: "O que os viajantes mais engajam",
       description:
-        "Casais, famílias e grupos que reservaram caiaque transparente, jet cars e passeios de um dia conosco.",
+        "Destaques recentes de @hillsoceansja — posts e reels dos últimos dois anos com curtidas, visualizações e comentários reais no Instagram.",
+      instagramSource: "@hillsoceansja",
+      viewOnInstagram: "Ver publicação no Instagram",
     },
     faq: {
       eyebrow: "Perguntas frequentes",

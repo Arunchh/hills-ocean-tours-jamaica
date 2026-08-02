@@ -1,6 +1,6 @@
 "use client";
 
-import { Award, Clock, DollarSign, Shield, Star } from "lucide-react";
+import { Award, Camera, Clock, DollarSign, MapPin, Shield, Star, Users } from "lucide-react";
 import { TrustBarTravelDecor } from "@/components/ui/HomeTravelDecor";
 import { JamaicaStripe } from "@/components/ui/JamaicaStripe";
 import { useI18n } from "@/i18n/LocaleProvider";
@@ -11,6 +11,9 @@ const iconMap = {
   star: Star,
   clock: Clock,
   dollar: DollarSign,
+  camera: Camera,
+  map: MapPin,
+  users: Users,
 };
 
 export function TrustBar() {

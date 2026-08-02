@@ -5,7 +5,7 @@ export type NavItem = {
 
 export type TrustPoint = {
   label: string;
-  icon: "shield" | "dollar" | "star" | "clock";
+  icon: "shield" | "dollar" | "star" | "clock" | "award" | "camera" | "map" | "users";
 };
 
 export type ValueProp = {
@@ -120,10 +120,21 @@ export type HowItWorksStep = {
 };
 
 export type Testimonial = {
+  id: string;
   name: string;
   location: string;
   text: string;
   rating: number;
+  experience?: string;
+  source?: "instagram";
+  postUrl?: string;
+  publishedAt?: string;
+  engagement?: {
+    likes: number;
+    comments: number;
+    views?: number;
+  };
+  tourSlug?: string;
 };
 
 export type Faq = {
@@ -215,6 +226,8 @@ export type SiteConfig = {
   social: {
     facebook: string;
     instagram: string;
+    instagramHandle?: string;
+    instagramFollowers?: number;
     tripadvisor: string;
   };
   nav: NavItem[];
@@ -321,7 +334,13 @@ export type UiMessages = {
     tourCatalog: { eyebrow: string; title: string; description: string };
     excursions: { eyebrow: string; title: string; description: string };
     howItWorks: { eyebrow: string; title: string; description: string };
-    testimonials: { eyebrow: string; title: string; description: string };
+    testimonials: {
+      eyebrow: string;
+      title: string;
+      description: string;
+      instagramSource: string;
+      viewOnInstagram: string;
+    };
     faq: { eyebrow: string; title: string; description: string };
     contact: { eyebrow: string; title: string; description: string };
     transportCta: { title: string; description: string; button: string };

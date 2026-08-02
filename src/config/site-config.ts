@@ -1,4 +1,9 @@
 import { excursionLandmarkImages, locationImages } from "@/config/location-images";
+import {
+  instagramProfile,
+  instagramTestimonials,
+  instagramTrustPoints,
+} from "@/config/instagram-social-proof";
 
 const bambooRaftingImages = [
   "/images/tours/bamboo-rafting/01-hero.jpeg",
@@ -68,7 +73,13 @@ export const siteConfig = {
     secondaryCta: "Airport & Cruise Transfer",
     image: locationImages.heroMontegoBay,
     imageAlt: "Doctor's Cave Beach, Montego Bay Hip Strip, Jamaica",
-    badges: ["Local MoBay Operator", "Drone Photo & Video", "Hotel Pickup", "WhatsApp Booking"],
+    badges: [
+      "Local MoBay Operator",
+      "Drone Photo & Video",
+      "Hotel Pickup",
+      "WhatsApp Booking",
+      instagramProfile.tagline,
+    ],
   },
 
   trustPoints: [
@@ -76,6 +87,7 @@ export const siteConfig = {
     { label: "50% Deposit to Book", icon: "dollar" as const },
     { label: "Cancel 7 Days Before", icon: "clock" as const },
     { label: "WhatsApp Confirmation", icon: "star" as const },
+    ...instagramTrustPoints,
   ],
 
   valueProps: [
@@ -950,26 +962,7 @@ export const siteConfig = {
     },
   ],
 
-  testimonials: [
-    {
-      name: "Sarah M.",
-      location: "Miami, FL",
-      text: "The clear kayak photoshoot was the highlight of our trip! Drone shots came out incredible and pickup from our MoBay hotel was seamless. Worth every dollar.",
-      rating: 5,
-    },
-    {
-      name: "James & Lisa T.",
-      location: "Toronto, Canada",
-      text: "Jet car at Pier One was a blast — 4 of us fit perfectly and we got an amazing edited video the same day. Easy deposit via Zelle and cash balance on pickup.",
-      rating: 5,
-    },
-    {
-      name: "Daniel R.",
-      location: "Atlanta, GA",
-      text: "Booked Dunn's River and Blue Hole through them from Royalton Blue Waters. Driver was on time, fair transport fee, and great vibes all day.",
-      rating: 5,
-    },
-  ],
+  testimonials: [...instagramTestimonials],
 
   faqs: [
     {
@@ -1066,7 +1059,9 @@ export const siteConfig = {
 
   social: {
     facebook: "https://facebook.com",
-    instagram: "https://www.instagram.com/hillsoceansja/",
+    instagram: instagramProfile.url,
+    instagramHandle: instagramProfile.handle,
+    instagramFollowers: instagramProfile.followers,
     tripadvisor: "https://tripadvisor.com",
   },
 

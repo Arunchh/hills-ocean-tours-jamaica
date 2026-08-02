@@ -1,8 +1,16 @@
 "use client";
 
-import { Quote, Star } from "lucide-react";
+import { AtSign, ExternalLink, MessageCircle, Quote, Star } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { useI18n } from "@/i18n/LocaleProvider";
+
+function formatEngagement(likes: number, comments: number, views?: number) {
+  const parts: string[] = [];
+  if (likes > 0) parts.push(`${likes.toLocaleString()} likes`);
+  if (comments > 0) parts.push(`${comments.toLocaleString()} comments`);
+  if (views && views > 0) parts.push(`${views.toLocaleString()} views`);
+  return parts.join(" · ");
+}
 
 export function Testimonials() {
   const { siteConfig, ui } = useI18n();
@@ -16,14 +24,21 @@ export function Testimonials() {
           description={ui.sections.testimonials.description}
         />
 
-        <div className="mt-10 grid gap-4 sm:mt-14 sm:grid-cols-2 sm:gap-6 md:grid-cols-3 md:gap-8">
+        <div className="mt-10 grid gap-4 sm:mt-14 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3 lg:gap-8">
           {siteConfig.testimonials.map((review) => (
             <article
-              key={review.name}
-              className="relative rounded-2xl border-2 border-jamaica-green/10 bg-jamaica-cream p-5 sm:p-6"
+              key={review.id}
+              className="relative flex flex-col rounded-2xl border-2 border-jamaica-green/10 bg-jamaica-cream p-5 sm:p-6"
             >
               <Quote className="absolute right-6 top-6 h-8 w-8 text-jamaica-gold/40" />
-              <div className="flex gap-1">
+
+              {review.experience ? (
+                <p className="text-xs font-bold uppercase tracking-wide text-jamaica-green">
+                  {review.experience}
+                </p>
+              ) : null}
+
+              <div className="mt-2 flex gap-1">
                 {Array.from({ length: review.rating }).map((_, i) => (
                   <Star
                     key={i}
@@ -31,12 +46,52 @@ export function Testimonials() {
                   />
                 ))}
               </div>
-              <p className="mt-4 text-sm leading-relaxed text-jamaica-black-soft">
+
+              <p className="mt-4 flex-1 text-sm leading-relaxed text-jamaica-black-soft">
                 &ldquo;{review.text}&rdquo;
               </p>
+
               <div className="mt-6 border-t border-jamaica-green/10 pt-4">
-                <p className="font-bold text-jamaica-black">{review.name}</p>
-                <p className="text-sm text-jamaica-green">{review.location}</p>
+                <div className="flex items-start justify-between gap-3">
+                  <div>
+                    <p className="font-bold text-jamaica-black">{review.location}</p>
+                    {review.publishedAt ? (
+                      <p className="text-sm text-jamaica-green">
+                        {ui.sections.testimonials.instagramSource} ·{" "}
+                        {new Date(review.publishedAt).toLocaleDateString(undefined, {
+                          month: "short",
+                          year: "numeric",
+                        })}
+                      </p>
+                    ) : null}
+                  </div>
+                  {review.source === "instagram" ? (
+                    <AtSign className="h-5 w-5 shrink-0 text-jamaica-green" aria-hidden />
+                  ) : null}
+                </div>
+
+                {review.engagement ? (
+                  <p className="mt-2 flex items-center gap-1.5 text-xs text-jamaica-black-soft/80">
+                    <MessageCircle className="h-3.5 w-3.5 shrink-0" aria-hidden />
+                    {formatEngagement(
+                      review.engagement.likes,
+                      review.engagement.comments,
+                      review.engagement.views,
+                    )}
+                  </p>
+                ) : null}
+
+                {review.postUrl ? (
+                  <a
+                    href={review.postUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-jamaica-green hover:underline"
+                  >
+                    {ui.sections.testimonials.viewOnInstagram}
+                    <ExternalLink className="h-3 w-3" aria-hidden />
+                  </a>
+                ) : null}
               </div>
             </article>
           ))}
